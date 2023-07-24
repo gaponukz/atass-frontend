@@ -377,8 +377,8 @@ nav span{
  }
  .t{
       position: absolute;
-     left: 14%;
-     bottom: 8%;
+      left: 14%;
+      bottom: 8%;
      font-size: 17px;
  }
  .pic img{
@@ -410,8 +410,8 @@ nav span{
  }
  .r{
    position: absolute;
-     left: 13%;
-   width: 90%;
+     left: 10%;
+   width: 93%;
  }
  #sadasd{
      width: 150%;
@@ -425,6 +425,7 @@ nav span{
 .card-body button{
     font-size: 14px;
 }
+
 
 .big12{
     display: none;
@@ -442,10 +443,14 @@ nav span{
       outline:none;
       border: none;
       text-align: center;
-      width: 71%;
+      width: 82%;
       height: 51px;
 
   }
+  .all{
+    position: absolute;
+    right:45%;  
+}
 
   .sadadas:focus{
       box-shadow: none;
@@ -462,7 +467,9 @@ nav span{
   }
    .small{
        padding-left: 24%;
-       padding-top: 10px;
+       width: 100%;
+       padding-top: 18px;
+       
    }
    .container{
        height: 250px;
@@ -496,14 +503,14 @@ nav span{
      .test{
          position: absolute;
          top:0;
-         left: 0;
+         left: 3%;
      }
      .t{
-         padding-left: 5px;
+         padding-left: 14px;
          font-size: 17px;
      }
      .time{
-         left: 2px;
+         left: 3%;
      }
 }
 
@@ -511,5 +518,21 @@ nav span{
     #selec{
         position: absolute;
         bottom: 57%;
+    }
+    .time{
+        left:10px;
+    }
+    .t{
+        left: 45px;
+    }
+    .pic1{
+        margin-left: 9px;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px){
+    .time{
+        left: 3%;
     }
 }

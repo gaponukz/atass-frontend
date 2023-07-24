@@ -5,6 +5,7 @@
 }
 .first_name{
     padding-bottom: 2%;
+    margin-right: 10%;
 }
 .new_card{
     margin-bottom: 5%;
@@ -78,6 +79,10 @@
     margin-left: -10%;
 }
 @media (max-width: 800px){
+    .first_name{
+        margin-right: 0;
+        margin-left: 3%;
+    }
     .new_card{
         width: 70%;
     }
@@ -90,6 +95,11 @@
     .events{
         margin-top: 20%;
         margin-left: -21%;
+    }
+    .rov{
+     position: absolute;
+     right: 4%;
+     width: 100%;
     }
 }
 
