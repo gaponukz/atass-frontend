@@ -7,13 +7,13 @@ import { changeAuthorized, changeLogout } from "../features/getUser/getUserData"
 import { Circles } from "react-loader-spinner"
 
 import { NavLink } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import cross from "./static/images/cross.png";
 import icon_eye from "./static/images/icons8-eye-96.png"
 
-import { fetchPosts, changeStatus } from "../features/post/PostSlice";
+import { fetchPosts } from "../features/post/PostSlice";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -41,7 +41,6 @@ const SignIn = () => {
     const onSubmitHandler = (data) => {
         console.log({ data });
         dispatch(fetchPosts({ url: "signin", gmail: data.email, password: data.password, rememberHim: rememberHim }))
-        reset()
     }
 
     useEffect(() => {
@@ -50,6 +49,7 @@ const SignIn = () => {
             dispatch(changeLogout())
             dispatch(changeAuthorized(true))
             navigate("/user-profile");
+            reset()
         }
     }, [flag])
 

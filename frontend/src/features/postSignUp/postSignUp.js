@@ -47,7 +47,10 @@ export const signUpSlice = createSlice({
   name: "signup",
   initialState,
   reducers: {
-
+    changeFinalFlagStatus: (state, action) => {
+      console.log("test", action.payload);
+      state.finalFlagSuccess = action.payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -81,6 +84,6 @@ export const signUpSlice = createSlice({
   },
 })
 
-export const { } = signUpSlice.actions;
+export const { changeFinalFlagStatus } = signUpSlice.actions;
 
 export default signUpSlice.reducer;

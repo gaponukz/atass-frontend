@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { fetchSignUp, fetchSignUpConfirm } from "../features/postSignUp/postSignUp";
+import { fetchSignUp, fetchSignUpConfirm, changeFinalFlagStatus } from "../features/postSignUp/postSignUp";
 
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,6 @@ const schema = yup.object().shape({
     password: yup.string().min(4, "Щонайменше 4 символи").max(32, "Надто великий пароль").required("Заповніть поле: пароль"),
     confPassword: yup.string().min(4, "Щонайменше 4 символи").max(32, "Надто великий пароль").required("Заповніть поле: підтвердити пароль"),
     phoneNumber: yup.string().matches(phoneRegExp, 'Заповніть поле: телефон'),
-
 });
 
 
@@ -26,14 +25,18 @@ const SignUp = () => {
     const postStatus = useSelector((state) => state.signup.status);
     const flagSuccess = useSelector((state) => state.signup.flagSuccess)
     const finalFlagSuccess = useSelector((state) => state.signup.finalFlagSuccess)
-    console.log(postStatus);
+    // console.log(postStatus);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    if (finalFlagSuccess) {
-        navigate("/user-profile");
-    }
+    useEffect(() => {
+        if (finalFlagSuccess) {
+            dispatch(changeFinalFlagStatus(false));
+            navigate("/user-profile");
+        }
+    }, [finalFlagSuccess])
+    
 
     // ui state
     const [gmail, setGmail] = useState("");
@@ -81,7 +84,6 @@ const SignUp = () => {
             }
 
         }
-
         // reset()
     }
 
@@ -89,9 +91,7 @@ const SignUp = () => {
         <>
             <ToastContainer />
             <form onSubmit={handleSubmit(onSubmitHandler)}>
-
                 <div className="container pp">
-
                     <div className="input-group mb-3 rrr" >
                         <input
                             type="text"
@@ -186,7 +186,6 @@ const SignUp = () => {
                         <div className="silka secod">
                             <a
                                 className="silka aaaa"
-
                                 onClick={() => {
                                     dispatch(fetchSignUp({ url: "signup", gmail: gmail }))
                                 }}
@@ -196,9 +195,7 @@ const SignUp = () => {
                         </div>
                     )}
                     
-
                     <div>
-
                         <p className="object">Дозволити надсилати рекламу на почту</p>
                         <input
                             type="checkbox"
@@ -217,7 +214,6 @@ const SignUp = () => {
                     <button
                         className="btn"
                         style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
-
                         type="submit"
                     >
                         <span>Зареєструвати</span>
@@ -226,8 +222,6 @@ const SignUp = () => {
                 </div>
 
             </form >
-            {/* EDIT */}
-
         </>
     )
 }
