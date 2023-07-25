@@ -3,6 +3,7 @@ import postReducer from "../features/post/PostSlice";
 import getDataReducer from "../features/getUser/getUserData";
 import postPassword from "../features/postPassword/postPassword";
 import signUpReucer from "../features/postSignUp/postSignUp";
+import getRouteData from "../features/getRoute/getRouteData";
  
 export const store = configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
         getUser: getDataReducer,
         reset: postPassword,
         signup: signUpReucer,
+        route: getRouteData,
     }
 })

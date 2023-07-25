@@ -11,6 +11,7 @@ import UserProfile from "./components/UserProfile";
 import {  Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { refreshUser } from "./features/getUser/getUserData";
+import UniqRouteInfo from "./components/UniqRouteInfo";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
@@ -39,7 +40,8 @@ function App() {
         {/* site */}
         <Route path="/" element={<MainSitePage />}/>
         <Route path="/about-us" element={<>About Us</>}/>
-        
+        <Route path="/route" element={<UniqRouteInfo />}/>
+        {/* /route/move_from_city=:fromCity/move_to_city=:toCity/data=:data */}
         {/* user features */}
         <Route path="/sign-in" element={<SignIn />}/>
         <Route path="/sign-up" element={<SignUp />}/>
