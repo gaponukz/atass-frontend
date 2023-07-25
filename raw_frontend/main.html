@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Mono:wght@200&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+      <title>Пошук автобусних квитків</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+      <link rel="stylesheet" href="static/style.css" >
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+   </head>
+   <body>
+   <main>
+      <div>
+          <nav class="navbar  " id="top">
+           <div class="container-fluid">
+               <div  class="pic" >
+              <img src="static/images/Logo.png">
+              
+               </div>
+             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+               <div class="offcanvas-header">
+                   <img src="static/images/Logo.png" style="width: 90px">
+
+                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body">
+                 <ul>
+                       <img src="static/images/icons8-person-96.png" class="person" style="float: left;">
+                       <li class="osob"><a href="#">Увійти</a></li>
+                     <div style="margin-right: 100px; margin-top: 25px">
+                        <img src="static/images/icons8-contact-us-96.png" class="us" style="float: left;">
+                        <li class="onas"><a href="#" >О нас</a></li>
+                     </div></ul>
+                         <div id="selec">
+                        <img src="static/images/icons8-globe-96.png" class="world" style="float: left;">
+                        <select id="language-selector1">
+                          <option value="uk">Українська</option>
+                          <option value="en">English</option>
+                          <option value="pl">Polski</option>
+                       </select>
+                             </div>
+
+
+               </div>
+             </div>
+           </div>
+         </nav>
+         <nav class="navigation" id="top2">
+            <img src="static/images/Logo.png" >
+
+            <ul style="color:white;">
+               <select id="language-selector">
+                  <option value="uk">Українська</option>
+                  <option value="en">English</option>
+                  <option value="pl">Polski</option>
+               </select>
+               <li ><a href="#">Про нас</a></li>
+               <li><a href="#">Особистий кабінет</a></li>
+            </ul>
+         </nav>
+
+         <div class="row1">
+            <div class="column1">
+               <h2>Забронюйте свою наступну автобусну поїздку. </h2>
+               <h3>І насолоджуйтеся безпроблемним плануванням подорожей з Atass.</h3>
+            </div>
+            <div class="column2">
+            </div>
+         </div>
+         <div class="container">
+            <div class="big">
+              <div class="input-group" >
+               <div class="form-floating mb-3">
+                  <input type="text" id="from" class="form-control" placeholder="Звідки?" name="from" autocomplete="off" required>
+                  <label for="from">Звідки?</label>
+               </div>
+               <div class="form-floating mb-3">
+                  <input type="text" id="to" class="form-control" name="to" placeholder="Куди?" autocomplete="off" required >
+                  <label for="to">Куди?</label>
+               </div>
+
+
+               <div class="form-floating mb-3">
+                  <input type="date" id="date" class="form-control" name="date" placeholder="Коли?" autocomplete="off" required >
+                  <label for="date">Коли?</label>
+               </div>
+
+                <button type="submit" class="btn" style="background-color: #40ABCF;color:white;height: 59px;" id="knop">
+                  <img src="static/images/loop.png">
+                  <span>Шукати</span>
+                </button>
+              </div>
+            </div>
+            <div class="small">
+                <div class="input-group1" >
+                    <div class="form-floating mb-3">
+                         <input type="text" id="from1" class="form-control" name="from" placeholder="Звідки?" autocomplete="off" required style="display: block; " id="test">
+                         <label for="from1">Звідки?</label>
+                    </div>
+                       </div>
+                       <div class="input-group1" >
+                           <div class="form-floating mb-3">
+                         <input type="text" id="to1" class="form-control" name="to" placeholder="Куди?" autocomplete="off" required style="display: block;">
+                                <label for="to1">Куди?</label>
+                           </div>
+                       </div>
+                       <div class="input-group1" >
+                           <div class="form-floating mb-3">
+                         <input type="date" id="date1" class="form-control" name="date" autocomplete="off" required style="display: block;">
+                               <label for="date1">Коли?</label>
+                           </div>
+                       </div>
+                       <div class="input-group1"  id="small3">
+                         <button type="submit" class="btn" style="background-color: #40ABCF;color:white; display: block ;" id="knop">
+                           <img src="static/images/loop.png">
+                           <span>Шукати</span>
+                         </button>
+                       </div>
+            </div>
+
+            </div>
+      </div>
+            </main>
+            <div class="row">
+               <div class="col-sm-4">
+                  <div class="d-flex">
+                     <img src="static/images/ticket.png" alt="Image" class="img-fluid mr-3" >
+                     <p>Шукаєте квитки на автобус, які відповідають вашому графіку та бюджету?</p>
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="d-flex">
+                     <img src="static/images/worldwide.png" alt="Image" class="img-fluid mr-3" >
+                     <p>Попрощайтеся з нескінченними пошуками автобусних квитків. Наша платформа дозволяє забронювати ідеальну подорож.</p>
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="d-flex">
+                     <img src="static/images/chat.png" alt="Image" class="img-fluid mr-3" >
+                     <p>Потрібна допомога з бронюванням? Наша команда доступна цілодобово, щоб допомогти вам.</p>
+                  </div>
+               </div>
+            </div>
+      </div>
+      <div class="container-1">
+         <div class="cloud-box">
+            <h2 class="mb-4">Куди ви хочете їхати?</h2>
+         </div>
+         <div class="row" style="padding-bottom: 50px;" id="card">
+            <div class="col" >
+               <div class="card">
+                  <div class="card-body route_card_body">
+                     <div class="sq">
+                        Київ
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon sc-ktwOSD kPQuM sc-dGAOeH GAPhQ" width="24" height="24" aria-hidden="true">
+                           <g fill="none" stroke="#708C91" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" transform="rotate(180 12 12)">
+                              <path d="M9 19l-7-7 7-7"></path>
+                              <path d="M22 12H2"></path>
+                           </g>
+                        </svg>
+                        Варшава
+                     </div>
+                     <div >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon2 sc-ktwOSD kPQuM" width="24" height="24" aria-hidden="true">
+                           <polyline fill="none" stroke="#708C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card">
+                  <div class="card-body route_card_body">
+                     <div >
+                        Варшава
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon sc-ktwOSD kPQuM sc-dGAOeH GAPhQ" width="24" height="24" aria-hidden="true">
+                           <g fill="none" stroke="#708C91" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" transform="rotate(180 12 12)">
+                              <path d="M9 19l-7-7 7-7"></path>
+                              <path d="M22 12H2"></path>
+                           </g>
+                        </svg>
+                        Київ
+                     </div>
+                     <div >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon2 sc-ktwOSD kPQuM" width="24" height="24" aria-hidden="true">
+                           <polyline fill="none" stroke="#708C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col">
+               <div class="card">
+                  <div class="card-body route_card_body">
+                     <div >
+                        Київ
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon sc-ktwOSD kPQuM sc-dGAOeH GAPhQ" width="24" height="24" aria-hidden="true">
+                           <g fill="none" stroke="#708C91" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" transform="rotate(180 12 12)">
+                              <path d="M9 19l-7-7 7-7"></path>
+                              <path d="M22 12H2"></path>
+                           </g>
+                        </svg>
+                        Львів
+                     </div>
+                     <div >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon2 sc-ktwOSD kPQuM" width="24" height="24" aria-hidden="true">
+                           <polyline fill="none" stroke="#708C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

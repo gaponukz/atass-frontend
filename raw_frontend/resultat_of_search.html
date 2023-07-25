@@ -1,0 +1,177 @@
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Mono:wght@200&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+      <title>Пошук автобусних квитків</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+      <link rel="stylesheet" href="static/search_res.css" >
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+   </head>
+   <body>
+   <main>
+      <div class="na">
+          <nav class="navbar  " id="top">
+           <div class="container-fluid">
+               <div  class="pic" >
+              <img src="static/images/logo.png">
+
+               </div>
+             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+               <div class="offcanvas-header">
+                   <img src="static/images/logo.png">
+                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body">
+                 <ul>
+                       <img src="static/images/icons8-person-96.png" class="person" style="float: left;">
+                       <li class="osob"><a href="#">Увійти</a></li>
+                     <div style="margin-right: 100px; margin-top: 25px">
+                        <img src="static/images/icons8-contact-us-96.png" class="us" style="float: left;">
+                        <li class="onas"><a href="#" >О нас</a></li>
+                     </div></ul>
+                         <div id="selec">
+                        <img src="static/images/icons8-globe-96.png" class="world" style="float: left;">
+                        <select id="language-selector1">
+                          <option value="uk">Українська</option>
+                          <option value="en">English</option>
+                          <option value="pl">Polski</option>
+                       </select>
+                             </div>
+
+
+               </div>
+             </div>
+           </div>
+         </nav>
+          <nav class="navigation" id="top2">
+            <img src="static/images/logo.png" >
+            <span></span>
+            <ul>
+               <select id="language-selector">
+                  <option value="uk">Українська</option>
+                  <option value="en">English</option>
+                  <option value="pl">Polski</option>
+               </select>
+               <li><a href="#">Про нас</a></li>
+               <li><a href="#">Особистий кабінет</a></li>
+            </ul>
+         </nav>
+          <div class="container">
+              <div class="big12">
+              <div class="input-group" id="sadasd">
+               <div class="form-floating mb-3" id="fr">
+                  <input type="text" id="from" class="form-control sadadas" placeholder="Звідки?" name="from" autocomplete="off" required>
+                  <label for="from">Звідки?</label>
+               </div>
+               <div class="form-floating mb-3" id="t">
+                  <input type="text" id="to" class="form-control sadadas" name="to" placeholder="Куди?" autocomplete="off" required >
+                  <label for="to">Куди?</label>
+               </div>
+
+
+               <div class="form-floating mb-3">
+                  <input type="date" id="date" class="form-control sadadas" name="date" placeholder="Коли?" autocomplete="off" required >
+                  <label for="date">Коли?</label>
+               </div>
+
+                <button type="submit" class="btn qw" style="background-color: #40ABCF;;height: 59px;" id="knop">
+                    
+                  <img src="static/images/loop.png">
+                  <span>Шукати</span>
+                </button>
+              </div>
+            </div>
+              <div class="small">
+                <div class="input-grou" >
+                    <div class="form-floating mb-3 test12" id="he">
+                         <input type="text" id="from1" class="form-control sadadas" name="from" placeholder="Звідки?" autocomplete="off" required style="display: block; " id="test">
+                         <label for="from1">Звідки?</label>
+                    </div>
+                       </div>
+                       <div class="input-grou" >
+                           <div class="form-floating mb-3 test12">
+                         <input type="text" id="to1" class="form-control sadadas" name="to" placeholder="Куди?" autocomplete="off" required style="display: block;">
+                                <label for="to1">Куди?</label>
+                           </div>
+                       </div>
+                       <div class="input-grou" >
+                           <div class="form-floating mb-3 test12">
+                         <input type="date" id="date1" class="form-control sadadas" name="date" autocomplete="off" required style="display: block;">
+                               <label for="date1">Коли?</label>
+                           </div>
+                       </div>
+                       <div class="input-grou"  id="small3">
+                         <button type="submit" class="btn " style="background-color: #40ABCF;color:white; display: block ;" id="knop">
+                           <img src="static/images/loop.png">
+                           <span>Шукати</span>
+                         </button>
+                       </div>
+            </div>
+              </div>
+
+      </div>
+        <div class="container1">
+            <div class="r">
+        <div class="card">
+              <div class="card-body">
+                   <div class="test">
+                 <img src="static/images/icons8-circle-32.png" class="pic1">
+                <span class="names">4:00 Київ</span>
+
+                       <div class="second">
+                  <img src="static/images/icons8-visit-32.png" class="pic1">
+                 <span class="names">5:00 Львів</span>
+                           </div>
+                       </div>
+                  <span class="price">60$</span>
+                  <button class="but">Вибрати</button>
+                  <img src="static/images/icons8-clock-96.png" class="time">
+                  <span class="t">18ч</span>
+              </div>
+        </div>
+           <div class="card">
+              <div class="card-body">
+                  <div class="test">
+                 <img src="static/images/icons8-circle-32.png" class="pic1">
+                <span class="names">4:00 Київ</span>
+                      <div class="second">
+                  <img src="static/images/icons8-visit-32.png" class="pic1">
+                 <span class="names">5:00 Львів</span>
+                      </div>
+                      </div>
+                  <span class="price">60$</span>
+                  <button  class="but">Вибрати</button>
+                  <img src="static/images/icons8-clock-96.png" class="time">
+                  <span class="t">18ч</span>
+              </div>
+        </div>
+           <div class="card">
+              <div class="card-body">
+                  <div class="test">
+
+                 <img src="static/images/icons8-circle-32.png" class="pic1">
+                <span class="names">4:00 Київ</span>
+                      <div class="second">
+                  <img src="static/images/icons8-visit-32.png" class="pic1">
+                 <span class="names">5:00 Львів</span>
+                      </div>
+                      </div>
+                  <span class="price">60$</span>
+                  <button  class="but">Вибрати</button>
+                  <img src="static/images/icons8-clock-96.png" class="time">
+                  <span class="t">18ч</span>
+              </div>
+        </div>
+            </div>
+   </div>
+   </main>
+
+
+</body>
+</html>
