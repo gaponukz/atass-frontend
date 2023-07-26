@@ -102,7 +102,7 @@ const MainSitePage = () => {
          </div>
          <div className="row" style={{paddingBottom: "50px"}} id="card">
             <div className="col" >
-               <div className="card">
+               <div className="card next_card">
                   <div className="card-body route_card_body">
                      <div className="sq">
                         Київ
@@ -123,7 +123,7 @@ const MainSitePage = () => {
                </div>
             </div>
             <div className="col">
-               <div className="card">
+               <div className="card next_card">
                   <div className="card-body route_card_body">
                      <div >
                         Варшава
@@ -144,7 +144,7 @@ const MainSitePage = () => {
                </div>
             </div>
             <div className="col">
-               <div className="card">
+               <div className="card next_card">
                   <div className="card-body route_card_body">
                      <div >
                         Київ

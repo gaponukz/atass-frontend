@@ -114,7 +114,7 @@ const UniqRouteInfo = () => {
 
      return (
           <>
-               <div className="container">
+               <div className="container colsss">
                     <div className="big12">
                          <div className="input-group" id="sadasd">
                               <div className="form-floating mb-3" id="fr">
@@ -139,7 +139,7 @@ const UniqRouteInfo = () => {
                               </button>
                          </div>
                     </div>
-                    <div className="small">
+                    <div className="small56">
                          <div className="input-grou" >
                               <div className="form-floating mb-3 test12" id="he">
                                    <input type="text" id="from1" className="form-control sadadas" name="from" placeholder="Звідки?" autocomplete="off" required style={{ display: "block" }} />

@@ -16,14 +16,14 @@ const Card = ({ time_from, city_from, time_to, city_to, price }) => {
      console.log(test.getHours(), test.getMinutes());
      return (
           <>
-               <div className="card">
-                    <div className="card-body">
-                         <div className="test">
-                              <img src={circle} className="pic1" />
+               <div className="card mn">
+                    <div className="card-body qwert">
+                         <div className="testtttttt">
+                              <img src={circle} className="pic1111" />
                               <span className="names">{parsed_time_from} {city_from}</span>
 
                               <div className="second">
-                                   <img src={visit} className="pic1" />
+                                   <img src={visit} className="pic1111" />
                                    <span className="names">{parsed_time_to} {city_to}</span>
                               </div>
                          </div>

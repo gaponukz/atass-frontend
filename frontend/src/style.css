@@ -222,7 +222,7 @@ nav span{
 .col{
     margin-bottom: 10px;
 }
- .card-body{
+ .route_card_body{
         display: flex;
         justify-content: center;
     }
@@ -299,7 +299,7 @@ nav span{
 
     font-size: 18px;
     }
-    .card-body{
+    .route_card_body{
         display: flex;
         justify-content: center;
     }
