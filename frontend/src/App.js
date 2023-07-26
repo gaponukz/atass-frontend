@@ -41,7 +41,7 @@ function App() {
         <Route path="/" element={<MainSitePage />}/>
         <Route path="/about-us" element={<>About Us</>}/>
         <Route path="/route" element={<UniqRouteInfo />}/>
-        {/* /route/move_from_city=:fromCity/move_to_city=:toCity/data=:data */}
+        
         {/* user features */}
         <Route path="/sign-in" element={<SignIn />}/>
         <Route path="/sign-up" element={<SignUp />}/>
