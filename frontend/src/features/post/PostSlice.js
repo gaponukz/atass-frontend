@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const POSTS_URL = "http://localhost:8080";
+axios.defaults.withCredentials = true;
 
 const initialState = {
     status: "idle", // "idle" | "loading" | "succeeded" | "failed"
