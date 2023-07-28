@@ -103,11 +103,11 @@ const SignIn = () => {
                     </button>
                 </div>
                 <p>{errors.password?.message}</p>
-                <p className="object">Запам'ятати мене</p>
+                <p className="objectt">Запам'ятати мене</p>
                 <input
                     type="checkbox"
                     id="myCheckbox"
-                    className="object"
+                    className="objectt"
                     checked={rememberHim}
                     onChange={() => {
                         (rememberHim) ? setRememberHim(false) : setRememberHim(true);
@@ -115,7 +115,7 @@ const SignIn = () => {
                     }}
                 />
                 
-                <div className="sil">
+                <div className="silll">
                     <NavLink to="/reset-password" style={{ display: 'block' }} >Не пам'ятаю пароль</NavLink>
                     <NavLink to="/sign-up " style={{ display: 'block', marginTop: '2%'}}>Зареєструватись</NavLink>
                 </div>

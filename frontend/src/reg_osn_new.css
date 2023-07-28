@@ -178,6 +178,7 @@ nav span{
     font-size: 20px;
     text-decoration: none;
 }
+
 @media (max-width: 800px) {
        .container-fluid button:focus,.container-fluid button:active{
         box-shadow: none !important;

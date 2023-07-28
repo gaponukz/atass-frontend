@@ -85,7 +85,7 @@ const ResetPassword = () => {
             {...register("email")}
           />
           <button
-            className="btn qqq"
+            className="btn ss"
             type="button"
             onClick={() => {
               resetField("email")
@@ -105,7 +105,7 @@ const ResetPassword = () => {
 
           />
           <button
-            className="btn qqq"
+            className="btn ss"
             type="button"
             onClick={() => {
               (typePassword == "password") ? setTypePassword("test") : setTypePassword("password")
@@ -126,7 +126,7 @@ const ResetPassword = () => {
           />
 
           <button
-            className="btn qqq"
+            className="btn ss"
             type="button"
             onClick={() => {
               (typeResetPassword == "password") ? setTypeResetPassword("test") : setTypeResetPassword("password")
@@ -152,7 +152,7 @@ const ResetPassword = () => {
           />
 
               <button
-                className="btn qqq"
+                className="btn ss"
                 type="button"
                 onClick={() => {
                   setKeyCode("")
@@ -170,7 +170,7 @@ const ResetPassword = () => {
             type="submit"
             className="btn qqq"
             style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
-            id="knop"
+            
           >
             <span>Надіслати</span>
           </button>

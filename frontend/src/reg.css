@@ -131,13 +131,14 @@ nav span{
 
 .ss{
     background-color: #EDEDED;
-    width: 10%;
+    width: 15%;
 }
 .ss img{
     width: 40px;
 }
 
-.object{
+
+.objectt{
     float: left;
     display: block;
     font-weight: bold;
@@ -150,7 +151,7 @@ nav span{
     position: absolute;
     right: 26%;
 }
-.sil{
+.silll{
     padding-top: 10%;
     margin-right: 10px;
     font-weight: bold;
@@ -159,7 +160,7 @@ nav span{
 }
 
 
-.sil a{
+.silll a{
     text-decoration: none; /* Убирает подчеркивание ссылки */
     border-bottom: none; /* Убирает дефис под словом */
    
@@ -298,30 +299,35 @@ nav span{
      width: 100px;
  }
    .ss img{
-       width: 20px;
-       height: 20px;
+       width: 17px;
+       height: 17px;
    }
    .centered-text h1{
        font-size: 27px;
    }
-   .object{
+   .objectt{
        font-size: 14px;
    }
    #myCheckbox{
        width: 17px;
        height: 17px;
    }
-   .sil{
-       padding-top: 23%;
+   .silll{
+       padding-top: 13%;
    }
-   .sil a{
-       padding-top: 5%;
+   .silll a{
+       padding-top: 0%;
        font-size: 14px;
    }
    .ert{
        height: 40px;
        font-size: 13px;
    }
+   .kn button{
+    width: 40%;
+   }
+
+
 }
 
 @media (min-width: 800px){
@@ -335,12 +341,12 @@ nav span{
         position: absolute;
         bottom: 57%;
     }
-    .sil{
+    .silll{
        padding-top: 13%;
    }
 }
 @media only screen and (min-width: 800px) and (max-width: 970px){
-    .sil{
+    .silll{
        padding-top: 15%;
    }
 }
