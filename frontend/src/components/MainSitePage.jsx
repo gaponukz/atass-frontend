@@ -22,55 +22,6 @@ const MainSitePage = () => {
                   </div>
                </div>
                <div className="container xx">
-                  {/* <div className="big">
-                     <div className="input-group qq" >
-                        <div className="form-floating mb-3">
-                           <input type="text" id="from" className="form-control op" placeholder="Звідки?" name="from" autoComplete="off" required />
-                           <label htmlFor="from">Звідки?</label>
-                        </div>
-                        <div className="form-floating mb-3">
-                           <input type="text" id="to" className="form-control op" name="to" placeholder="Куди?" autoComplete="off" required />
-                           <label htmlFor="to">Куди?</label>
-                        </div>
-
-
-                        <div className="form-floating mb-3">
-                           <input type="date" id="date" className="form-control op" name="date" placeholder="Коли?" autoComplete="off" required />
-                           <label htmlFor="date">Коли?</label>
-                        </div>
-
-                        <button type="submit" className="btn" style={{ backgroundColor: "#40ABCF", color: "white", height: "59px" }} id="knop">
-                           <img src={loop} />
-                           <span>Шукати</span>
-                        </button>
-                     </div>
-                  </div>
-                  <div className="small">
-                     <div className="input-group1 cv" >
-                        <div className="form-floating mb-3">
-                           <input type="text" id="from1" className="form-control op" name="from" placeholder="Звідки?" autoComplete="off" required style={{ display: "block" }} />
-                           <label htmlFor="from1">Звідки?</label>
-                        </div>
-                     </div>
-                     <div className="input-group1 cv" >
-                        <div className="form-floating mb-3">
-                           <input type="text" id="to1" className="form-control op" name="to" placeholder="Куди?" autoComplete="off" required style={{ display: "block" }} />
-                           <label htmlFor="to1">Куди?</label>
-                        </div>
-                     </div>
-                     <div className="input-group1 cv" >
-                        <div className="form-floating mb-3">
-                           <input type="date" id="date1" className="form-control op" name="date" autoComplete="off" required style={{ display: "block" }} />
-                           <label htmlFor="date1">Коли?</label>
-                        </div>
-                     </div>
-                     <div className="input-group1 cv" id="small3">
-                        <button type="submit" className="btn noq" style={{ backgroundColor: "#40ABCF", color: "white", display: "block" }} id="knop">
-                           <img src={loop} />
-                           <span>Шукати</span>
-                        </button>
-                     </div>
-                  </div> */}
                   <SearchRoute />
                </div>
             </div>
