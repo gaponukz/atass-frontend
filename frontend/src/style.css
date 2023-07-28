@@ -551,3 +551,9 @@ nav span{
         margin-left: 5%;
         }
 }
+@media only screen and (min-width: 765px) and (max-width: 800px){
+    .row1 h2{
+        font-size: 44px;
+        margin-left: 7%;
+        }
+}

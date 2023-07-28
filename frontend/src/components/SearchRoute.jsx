@@ -29,7 +29,7 @@ const SearchRoute = () => {
                          </div> 
                     </div>
 
-                    <div className="small56">
+                    <div className="small56 ">
                          <div className="input-grou" >
                               <div className="form-floating mb-3 test12" id="he">
                                    <input type="text" id="from1" className="form-control sadadas" name="from" placeholder="Звідки?" autocomplete="off" required style={{ display: "block" }} />
