@@ -19,7 +19,8 @@ const UniqRouteInfo = () => {
      const dispatch = useDispatch();
      const navigate = useNavigate();
 
-     if (searchParams.get("move_from_city") == null || searchParams.get("move_to_city") == null || searchParams.get("date") == null) {
+     if (searchParams.get("move_from_city") == null || searchParams.get("move_to_city") == null || searchParams.get("date") == null ||
+         searchParams.get("move_from_city") === "" || searchParams.get("move_to_city") === "" || searchParams.get("date") === "") {
           navigate("/404")
      }
 

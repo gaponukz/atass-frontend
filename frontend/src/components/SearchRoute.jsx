@@ -1,11 +1,23 @@
 import { useState } from "react"
 import loop from "./static/images/loop.png"
+import { useNavigate } from "react-router-dom";
+
 
 const SearchRoute = () => {
 
+     // ui state
      const [ moveFrom, setMoveFrom ] = useState("");
      const [ moveTo, setMoveTo ] = useState("");
      const [ date, setDate ] = useState("");
+
+     // helper functions
+     const navigate = useNavigate();
+
+     const handleButtonClickSent = () => {
+          let datePrepared = date.split("-").reverse().join(".");
+          console.log("here", moveFrom, moveTo, datePrepared); // route?move_from_city=Ac&move_to_city=Bc&date=02.08.2023
+          navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)
+     }
  
      return (
           <>
@@ -18,25 +30,25 @@ const SearchRoute = () => {
                                    className="form-control sadadas" 
                                    placeholder="Звідки?" 
                                    name="from" 
-                                   autocomplete="off" 
+                                   autoComplete="off" 
                                    required 
                                    value={moveFrom}
                                    onChange={(e) => setMoveFrom(e.target.value)}
                               />
-                              <label for="from">Звідки?</label>
+                              <label htmlFor="from">Звідки?</label>
                          </div>
                          <div className="form-floating mb-3" id="t">
                               <input 
                                    type="text" 
                                    id="to" 
-                                   class="form-control sadadas" 
+                                   className="form-control sadadas" 
                                    name="to" placeholder="Куди?" 
-                                   autocomplete="off" 
+                                   autoComplete="off" 
                                    required 
                                    value={moveTo}
                                    onChange={(e) => setMoveTo(e.target.value)}
                               />
-                              <label for="to">Куди?</label>
+                              <label htmlFor="to">Куди?</label>
                          </div>
 
 
@@ -46,12 +58,12 @@ const SearchRoute = () => {
                                    id="date" 
                                    className="form-control sadadas" 
                                    name="date" placeholder="Коли?" 
-                                   autocomplete="off" 
+                                   autoComplete="off" 
                                    required 
                                    value={date}
                                    onChange={(e) => setDate(e.target.value)}
                               />
-                              <label for="date">Коли?</label>
+                              <label htmlFor="date">Коли?</label>
                          </div>
 
                          <button 
@@ -59,9 +71,7 @@ const SearchRoute = () => {
                               className="btn qw" 
                               style={{ backgroundColor: "#40ABCF", height: "59px" }} 
                               id="knop"
-                              onClick={() => {
-                                   console.log("here1", moveFrom, moveTo, date);
-                              }}
+                              onClick={handleButtonClickSent}
                          >
                               <img src={loop} />
                               <span>Шукати</span>
@@ -77,13 +87,13 @@ const SearchRoute = () => {
                                    id="from1" 
                                    className="form-control sadadas" 
                                    name="from" placeholder="Звідки?" 
-                                   autocomplete="off" 
+                                   autoComplete="off" 
                                    required 
                                    style={{ display: "block" }} 
                                    value={moveFrom}
                                    onChange={(e) => setMoveFrom(e.target.value)}
                               />
-                              <label for="from1">Звідки?</label>
+                              <label htmlFor="from1">Звідки?</label>
                          </div>
                     </div>
                     <div className="input-grou" >
@@ -94,13 +104,13 @@ const SearchRoute = () => {
                                    className="form-control sadadas" 
                                    name="to" 
                                    placeholder="Куди?" 
-                                   autocomplete="off" 
+                                   autoComplete="off" 
                                    required 
                                    style={{ display: "block" }} 
                                    value={moveTo}
                                    onChange={(e) => setMoveTo(e.target.value)}
                               />
-                              <label for="to1">Куди?</label>
+                              <label htmlFor="to1">Куди?</label>
                          </div>
                     </div>
                     <div className="input-grou" >
@@ -110,13 +120,13 @@ const SearchRoute = () => {
                                    id="date1" 
                                    className="form-control sadadas" 
                                    name="date" 
-                                   autocomplete="off" 
+                                   autoComplete="off" 
                                    required 
                                    style={{ display: "block" }} 
                                    value={date}
                                    onChange={(e) => setDate(e.target.value)}
                               />
-                              <label for="date1">Коли?</label>
+                              <label htmlFor="date1">Коли?</label>
                          </div>
                     </div>
                     <div className="input-grou" id="small3">
@@ -125,9 +135,7 @@ const SearchRoute = () => {
                               className="btn " 
                               style={{ backgroundColor: "#40ABCF", color: "white", display: "block" }} 
                               id="knop"
-                              onClick={() => {
-                                   console.log("here2", moveFrom, moveTo, date);
-                              }}
+                              onClick={handleButtonClickSent}
                          >
                               <img src={loop} />
                               <span>Шукати</span>

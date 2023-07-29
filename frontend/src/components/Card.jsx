@@ -10,11 +10,14 @@ const Card = ({ time_from, city_from, time_to, city_to, price }) => {
      const parsed_time_to_pre = new Date(time_to);
      const parsed_time_to = `${parsed_time_to_pre.getHours()} : ${parsed_time_to_pre.getMinutes()}`;
 
+     console.log("start");
      console.log(parsed_time_from_pre);
      console.log(parsed_time_to_pre);
-     let test = new Date(parsed_time_to_pre.getTime() - parsed_time_from_pre.getTime());
-     console.log(test.getFullYear(), test.getHours(), test.getMinutes());
-     console.log(parsed_time_to_pre.getFullYear(), parsed_time_to_pre.getFullYear());
+
+     let test = new Date(parsed_time_to_pre - parsed_time_from_pre);
+     console.log(test.getUTCHours(), test.getUTCMinutes());
+
+     console.log("end");
      return (
           <>
                <div className="card mn">
@@ -31,7 +34,7 @@ const Card = ({ time_from, city_from, time_to, city_to, price }) => {
                          <span className="price">{price}$</span>
                          <button className="but">Вибрати</button>
                          <img src={clock} className="time" />
-                         <span className="t">{test.getHours()}ч</span>
+                         <span className="t">{`${test.getUTCHours()}.${test.getUTCMinutes()}`} ч</span>
                     </div>
                </div>
           </>
