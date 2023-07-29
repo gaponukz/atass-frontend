@@ -23,7 +23,10 @@ const UniqRouteInfo = () => {
          searchParams.get("move_from_city") === "" || searchParams.get("move_to_city") === "" || searchParams.get("date") === "") {
           console.log(searchParams.get("move_from_city"), searchParams.get("move_to_city"), searchParams.get("date"));
           navigate("/404")
-          console.log("heretytytyty");
+     }
+
+     if (route_family.length === 0) {
+          navigate("/404")
      }
 
      console.log(searchParams.get("move_from_city"), searchParams.get("move_to_city"), searchParams.get("date"));

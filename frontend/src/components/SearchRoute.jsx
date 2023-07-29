@@ -16,10 +16,10 @@ const SearchRoute = ({ flagNav }) => {
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
           console.log("here", moveFrom, moveTo, datePrepared); // route?move_from_city=Ac&move_to_city=Bc&date=02.08.2023
-          // navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`, { replace: true })
+
           if (flagNav) {
-               
                navigate(`?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`, { replace: true })
+               navigate(0) // refresh page
           }   
           else {
                navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)

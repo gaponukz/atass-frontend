@@ -13,7 +13,7 @@ export const getRouteInfo = createAsyncThunk("route/getRouteInfo", async ({ from
                withCredentials: false
           }
      )
-     //console.log(response.data);
+     console.log(response.data);
 
      return response.data
 })
