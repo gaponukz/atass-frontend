@@ -3,7 +3,7 @@ import loop from "./static/images/loop.png"
 import { useNavigate } from "react-router-dom";
 
 
-const SearchRoute = () => {
+const SearchRoute = ({ flagNav }) => {
 
      // ui state
      const [ moveFrom, setMoveFrom ] = useState("");
@@ -16,7 +16,14 @@ const SearchRoute = () => {
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
           console.log("here", moveFrom, moveTo, datePrepared); // route?move_from_city=Ac&move_to_city=Bc&date=02.08.2023
-          navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)
+          // navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`, { replace: true })
+          if (flagNav) {
+               
+               navigate(`?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`, { replace: true })
+          }   
+          else {
+               navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)
+          }  
      }
  
      return (

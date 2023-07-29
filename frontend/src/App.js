@@ -48,8 +48,8 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />}/>
         <Route path="/reset-password" element={<ResetPassword />}/>
         <Route path="/edit-profile" element={<EditProfile />}/>
-        <Route path="/404" element={<PageNotFound />} />
-        <Route path="*" element={<Navigate to="/404" />} />
+        {/* <Route path="/404" element={<PageNotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} /> */}
       </Routes>
     </div>
   );

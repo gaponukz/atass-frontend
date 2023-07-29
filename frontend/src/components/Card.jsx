@@ -10,14 +10,14 @@ const Card = ({ time_from, city_from, time_to, city_to, price }) => {
      const parsed_time_to_pre = new Date(time_to);
      const parsed_time_to = `${parsed_time_to_pre.getHours()} : ${parsed_time_to_pre.getMinutes()}`;
 
-     console.log("start");
-     console.log(parsed_time_from_pre);
-     console.log(parsed_time_to_pre);
+     //console.log("start");
+     //console.log(parsed_time_from_pre);
+     //console.log(parsed_time_to_pre);
 
      let test = new Date(parsed_time_to_pre - parsed_time_from_pre);
-     console.log(test.getUTCHours(), test.getUTCMinutes());
+     //console.log(test.getUTCHours(), test.getUTCMinutes());
 
-     console.log("end");
+     //console.log("end");
      return (
           <>
                <div className="card mn">

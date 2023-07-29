@@ -21,7 +21,9 @@ const UniqRouteInfo = () => {
 
      if (searchParams.get("move_from_city") == null || searchParams.get("move_to_city") == null || searchParams.get("date") == null ||
          searchParams.get("move_from_city") === "" || searchParams.get("move_to_city") === "" || searchParams.get("date") === "") {
+          console.log(searchParams.get("move_from_city"), searchParams.get("move_to_city"), searchParams.get("date"));
           navigate("/404")
+          console.log("heretytytyty");
      }
 
      console.log(searchParams.get("move_from_city"), searchParams.get("move_to_city"), searchParams.get("date"));
@@ -34,7 +36,7 @@ const UniqRouteInfo = () => {
           <>
                {/*  */}
                <div className="container colsss">
-                    <SearchRoute />
+                    <SearchRoute flagNav={true}/>
                </div>
 
                <div className="container1">

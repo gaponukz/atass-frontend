@@ -22,7 +22,7 @@ const MainSitePage = () => {
                   </div>
                </div>
                <div className="container xx">
-                  <SearchRoute />
+                  <SearchRoute flagNav={false}/>
                </div>
             </div>
          </main>
