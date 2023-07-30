@@ -7,10 +7,13 @@ import ticket from "./static/images/ticket.png"
 import worlwide from "./static/images/worldwide.png";
 import chat from "./static/images/chat.png"
 
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 
 
 const HeaderNavBar = () => {
+
+   const navigate = useNavigate();
+
    return (
       <>
          <nav className="navbar  " id="top">
@@ -33,7 +36,12 @@ const HeaderNavBar = () => {
                   <div className="offcanvas-body">
                      <ul>
                         <img src={icons8_erson_96} className="person" style={{ float: "left" }} />
-                        <li className="osob"><NavLink to="/user-profile">Увійти</NavLink></li>
+                        <li className="osob"><a
+                           onClick={() => {
+                              navigate("/user-profile")
+                              navigate(0)
+                           }}
+                        >Увійти</a></li>
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
                            <li className="onas"><a href="#" >О нас</a></li>
