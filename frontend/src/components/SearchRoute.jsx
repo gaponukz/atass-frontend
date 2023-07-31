@@ -3,12 +3,12 @@ import loop from "./static/images/loop.png"
 import { useNavigate } from "react-router-dom";
 
 
-const SearchRoute = ({ flagNav }) => {
+const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) => {
 
      // ui state
-     const [ moveFrom, setMoveFrom ] = useState("");
-     const [ moveTo, setMoveTo ] = useState("");
-     const [ date, setDate ] = useState("");
+     const [ moveFrom, setMoveFrom ] = useState(defaultMoveFrom);
+     const [ moveTo, setMoveTo ] = useState(defaultMoveTo);
+     const [ date, setDate ] = useState(defaultDate);
 
      // helper functions
      const navigate = useNavigate();
