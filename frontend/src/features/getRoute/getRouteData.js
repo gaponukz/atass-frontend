@@ -18,6 +18,17 @@ export const getRouteInfo = createAsyncThunk("route/getRouteInfo", async ({ from
      return response.data
 })
 
+export const getRouteInfoDetail = createAsyncThunk("route/getRouteInfoDetail", async ({ id }) => {
+     console.log("tytt", `${BASE_URL}/get_route_info?route_id=${id}`, id);
+     const response = await axios.get(`${BASE_URL}/get_route_info?route_id=${id}`, 
+     {
+          withCredentials: false
+     })
+     console.log(response.data);
+     
+     return response.data;
+})
+
 const routeSlice = createSlice({
      name: "route",
      initialState: {
@@ -38,6 +49,16 @@ const routeSlice = createSlice({
                })
                .addCase(getRouteInfo.rejected, (state, action) => {
                     console.log("n-");
+               })
+               .addCase(getRouteInfoDetail.pending, (state) => {
+                    console.log("n1?");
+               })
+               .addCase(getRouteInfoDetail.fulfilled, (state, action) => {
+                    console.log("n1+");
+                    console.log(action.payload);
+               })
+               .addCase(getRouteInfoDetail.rejected, (state, action) => {
+                    console.log("n1-");
                })
      }
 })

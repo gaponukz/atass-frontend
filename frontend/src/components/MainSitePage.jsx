@@ -22,7 +22,7 @@ const MainSitePage = () => {
                   </div>
                </div>
                <div className="container xx">
-                  <SearchRoute flagNav={false}/>
+                  <SearchRoute flagNav={false} defaultMoveFrom={""} defaultMoveTo={""} defaultDate={""}/>
                </div>
             </div>
          </main>
