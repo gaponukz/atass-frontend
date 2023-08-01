@@ -32,7 +32,8 @@ export const getRouteInfoDetail = createAsyncThunk("route/getRouteInfoDetail", a
 const routeSlice = createSlice({
      name: "route",
      initialState: {
-         route_family: []
+         route_family: [],
+         route_info: []
      },
      reducers: {
 
@@ -55,7 +56,11 @@ const routeSlice = createSlice({
                })
                .addCase(getRouteInfoDetail.fulfilled, (state, action) => {
                     console.log("n1+");
-                    console.log(action.payload);
+                    //console.log(action.payload.rules);
+                    //console.log(action.payload.description);
+                    //console.log(action.payload.transportation_rules);
+
+                    state.route_info = {...action.payload}
                })
                .addCase(getRouteInfoDetail.rejected, (state, action) => {
                     console.log("n1-");
