@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom"
 import { getRouteInfoDetail } from "../features/getRoute/getRouteData"
 
 
+
 const UniqueRouteInfoDetail = () => {
 
   // helper
