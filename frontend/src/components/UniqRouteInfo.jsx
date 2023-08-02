@@ -133,9 +133,9 @@ const UniqRouteInfo = () => {
       <div className="container colsss">
         <SearchRoute flagNav={true} defaultMoveFrom={move_from_city} defaultMoveTo={move_to_city} defaultDate={date?.split(".").reverse().join("-")} />
       </div>
-
+         <div className="bef">
       <div className="container1">
-        <div className="r">
+       
           {test.map((t) => (
             <Card
               key={t.root_route_id}
@@ -148,8 +148,8 @@ const UniqRouteInfo = () => {
             />
           ))}
 
-        </div>
-      </div>
+        </div></div>
+      
       
       <CardInfo check={false}/>
     </>
