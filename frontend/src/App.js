@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     let interval = setInterval(() => {
       if (!flag) {
-        dispatch(refreshUser())
+        // dispatch(refreshUser())
         // console.log("SEND REFRESH");
       }
     }, 2000);
@@ -50,8 +50,9 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />}/>
         <Route path="/reset-password" element={<ResetPassword />}/>
         <Route path="/edit-profile" element={<EditProfile />}/>
-        <Route path="/404" element={<PageNotFound />} />
-        <Route path="*" element={<Navigate to="/404" />} />
+        {/* <Route path="/404" element={<PageNotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} /> */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
