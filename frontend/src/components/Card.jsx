@@ -4,7 +4,7 @@ import circle from "./static/images/icons8-circle-32.png"
 import { useNavigate } from "react-router-dom"
 
 const Card = ({ time_from, city_from, time_to, city_to, price, route_id }) => {
-
+     
      // helper
      const navigate = useNavigate();
 
