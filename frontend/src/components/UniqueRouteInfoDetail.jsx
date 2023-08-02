@@ -22,11 +22,11 @@ const UniqueRouteInfoDetail = () => {
 
   return (
     <div>
-      <div class="container">
+      <div class="container yuiop">
         <h2 class="data">Чт,13 липня</h2>
 
-        <div class="test">
-          <ul class="events ert">
+        <div class="testssss">
+          <ul class="events">
             <a href="#" class="link">
               <div class="test_s">
                 <p class="for_s" ></p></div>
@@ -40,7 +40,7 @@ const UniqueRouteInfoDetail = () => {
             <hr class="horiz" />
             <div class="money">
               <p class="tex">Ціна</p>
-              <p class="price">300$</p>
+              <p class="priceyyy">300$</p>
 
             </div>
             <hr class="horiz" />

@@ -459,8 +459,8 @@ nav span{
   .col{
       padding-right: 12%;
   }
-  row1 h2{
-      margin-left: 10%;
+  .row1 h2{
+      padding-left: 0;
   }
   .xx{
       margin-left: 2%;

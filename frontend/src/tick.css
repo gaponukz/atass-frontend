@@ -1,7 +1,7 @@
 
-.container {
+.yuiop {
      text-align: center;
-     width: 50%;
+     width: 100%;
      margin: 40px auto;
      background-color: #fcfcfc;
      
@@ -51,7 +51,7 @@
      left: 12%;
      font-weight: bold;
    } */
-   .test{
+   .testssss{
      padding-left: 20%;
      padding-top: 5%;
    }
@@ -129,7 +129,7 @@
      padding-right: 45%;
      display: inline-block;
    }
-   .price{
+   .priceyyy{
      
      font-weight: bold;
      display: inline-block;
@@ -157,7 +157,8 @@
        width: 70%;
      }
      
-     .container{
+     .yuiop{
+      width: 100%;
        padding-top: 5%;
        
      }
@@ -182,7 +183,7 @@
      
        width: 180%;
      }
-     .price{
+     .priceyyy{
        margin-left: 20%;
        
        font-size: 23px;

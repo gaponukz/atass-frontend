@@ -11,7 +11,7 @@ import './client_o_sebe.css'
 import './reg_osn_new.css'
 import "./set.css"
 import "./search_res.css"
-// import "./tick.css"
+import "./tick.css"
 
 import { store } from './app/store';
 import { Provider } from 'react-redux';

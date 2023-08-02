@@ -230,6 +230,9 @@ nav span{
 .container-fluid button{
     padding-bottom: 17px;
 }
+.container-1{
+    margin-top: 16.5%;
+}
 @media (max-width: 800px) {
 
     .container-fluid button:focus,.container-fluid button:active{
@@ -481,7 +484,9 @@ nav span{
    .first{
        padding-bottom: -7px;
    }
+
 }
+
 @media (min-width: 800px){
     #top{
         display: none;
