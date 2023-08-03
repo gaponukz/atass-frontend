@@ -79,8 +79,11 @@ const UniqueRouteInfoDetail = () => {
             </div>
             <hr className="horiz" />
             <div className="dop">
+              <p className="te zagol" >Опис:</p>
               <p className="te">В моєму авто не палять</p>
+              <p className="te zagol">Правила поїздки:</p>
               <p className="te">Люблю тварин!</p>
+              <p className="te zagol">Правила перевезення:</p>
             </div>
             <hr Name="horiz"/>
 
