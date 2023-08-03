@@ -43,16 +43,22 @@ const UniqueRouteInfoDetail = () => {
   const route_id = searchParams.get("id")
   const move_from = searchParams.get("move_from")
   const move_to = searchParams.get("move_to")
-  const route_info = useSelector((state) => state.route.route_info)
-  console.log(route_info);
 
   useEffect(() => {
     dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }));
   }, [])
 
-  const move_from_pre = new Date(test.move_from.date)
-  const move_to_pre = new Date(test.move_to.date)
-  console.log(move_from_pre, move_from_pre.getUTCDay(), move_from_pre.getUTCMonth(), move_from_pre.getTime());
+  const route_info = useSelector((state) => state.route.route_info)
+  //console.log(route_id, move_from, move_to);
+  console.log(route_info);
+  console.log(route_info?.move_from?.date);
+  console.log(route_info?.move_to?.date);
+
+  
+
+  const move_from_pre = new Date(route_info?.move_from?.date)
+  const move_to_pre = new Date(route_info?.move_to?.date)
+  console.log(move_from_pre.getHours(), move_from_pre.getMonth(), move_from_pre.getDay(), move_from_pre);
 
   return (
     <div>
@@ -65,29 +71,28 @@ const UniqueRouteInfoDetail = () => {
               <div className="test_s">
                 <p className="for_s" ></p></div>
               <li>
-                <time >{move_from_pre.getUTCHours()}:{move_from_pre.getUTCMinutes()}</time>
-                <span style={{textAlign: "left"}}><strong>{test.move_from.place.street},{test.move_from.place.city},{test.move_from.place.country}</strong> {test.move_from.place.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
+                <time >{move_from_pre.getHours()}:{move_from_pre.getMinutes()}</time>
+                <span style={{textAlign: "left"}}><strong>{route_info?.move_from?.place?.street},{route_info?.move_from?.place?.city},{route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
             <a href="#" className="link">
               <li>
-                <time >{move_to_pre.getUTCHours()}:{move_to_pre.getUTCMinutes()}</time>
-                <span style={{textAlign: "left"}}><strong>{test.move_to.place.street},{test.move_to.place.city},{test.move_to.place.country}</strong>{test.move_to.place.city} </span></li></a>
+                <time >{move_to_pre.getHours()}:{move_to_pre.getMinutes()}</time>
+                <span style={{textAlign: "left"}}><strong>{route_info?.move_to?.place?.street},{route_info?.move_to?.place?.city},{route_info?.move_to?.place?.country}</strong>{route_info?.move_to?.place?.city} </span></li></a>
             <hr className="horiz" />
             <div className="money">
               <p className="tex">Ціна</p>
-              <p className="priceyyy">{test.price}$</p>
+              <p className="priceyyy">{route_info?.price}$</p>
 
             </div>
             <hr className="horiz" />
             <div className="dop">
               <p className="te zagol" >Опис:</p>
-              <p className="te">В моєму авто не палять</p>
+              <p className="te">{route_info?.description?.ua}</p>
               <p className="te zagol">Правила поїздки:</p>
-              <p className="te">Люблю тварин!</p>
+              <p className="te">{route_info?.rules?.ua}</p>
               <p className="te zagol">Правила перевезення:</p>
+              <p className="te">{route_info?.transportation_rules?.ua}</p>
             </div>
             <hr Name="horiz"/>
-
-
           </ul>
           <div class="butto">
             <button type="submit" className="btn yuiooo" style={{backgroundColor: "#40ABCF", color:"white", fontWeight: "bold"}} id="knop">
