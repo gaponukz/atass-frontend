@@ -16,12 +16,13 @@ import UniqueRouteInfoDetail from "./components/UniqueRouteInfoDetail";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
+  const authorized = useSelector((state) => state.getUser.authorized)
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     let interval = setInterval(() => {
-      if (!flag) {
+      if (!flag || authorized) {
         // dispatch(refreshUser())
         // console.log("SEND REFRESH");
       }
@@ -31,7 +32,7 @@ function App() {
       clearInterval(interval);
     };
 
-  }, [flag])
+  }, [flag, authorized])
   
   
   return (

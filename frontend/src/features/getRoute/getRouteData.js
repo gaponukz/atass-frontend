@@ -18,8 +18,8 @@ export const getRouteInfo = createAsyncThunk("route/getRouteInfo", async ({ from
      return response.data
 })
 
-export const getRouteInfoDetail = createAsyncThunk("route/getRouteInfoDetail", async ({ id }) => {
-     console.log("tytt", `${BASE_URL}/get_route_info?route_id=${id}`, id);
+export const getRouteInfoDetail = createAsyncThunk("route/getRouteInfoDetail", async ({ id, id_from, id_to }) => {
+     console.log("tytt", `${BASE_URL}/get_route_info?route_id=${id}&move_from=${id_from}&move_to=${id_to}`, id);
      const response = await axios.get(`${BASE_URL}/get_route_info?route_id=${id}`, 
      {
           withCredentials: false

@@ -136,13 +136,15 @@ const UniqRouteInfo = () => {
          <div className="bef">
       <div className="container1">
        
-          {test.map((t) => (
+          {route_family.map((t) => (
             <Card
               key={t.root_route_id}
               time_from={t.move_from.date}
               city_from={t.move_from.place.city}
+              id_from={t.move_from.id}
               time_to={t.move_to.date}
               city_to={t.move_to.place.city}
+              id_to={t.move_to.id}
               price={t.price}
               route_id={t.root_route_id}
             />

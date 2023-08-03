@@ -41,11 +41,13 @@ const UniqueRouteInfoDetail = () => {
   const dispatch = useDispatch();
 
   const route_id = searchParams.get("id")
+  const move_from = searchParams.get("move_from")
+  const move_to = searchParams.get("move_to")
   const route_info = useSelector((state) => state.route.route_info)
   //console.log(route_info);
 
   useEffect(() => {
-    dispatch(getRouteInfoDetail({ id: route_id }));
+    dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }));
   }, [])
 
   const move_from_pre = new Date(test.move_from.date)

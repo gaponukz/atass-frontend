@@ -3,7 +3,7 @@ import visit from "./static/images/icons8-visit-32.png"
 import circle from "./static/images/icons8-circle-32.png"
 import { useNavigate } from "react-router-dom"
 
-const Card = ({ time_from, city_from, time_to, city_to, price, route_id }) => {
+const Card = ({ time_from, city_from, id_from, time_to, city_to, id_to, price, route_id }) => {
      
      // helper
      const navigate = useNavigate();
@@ -40,7 +40,7 @@ const Card = ({ time_from, city_from, time_to, city_to, price, route_id }) => {
                               className="but"
                               onClick={() => {
                                    // console.log("here");
-                                   navigate(`/route-info-detail?id=${route_id}`)
+                                   navigate(`/route-info-detail?id=${route_id}&move_from=${id_from}&move_to=${id_to}`)
                               }}
                          >Вибрати</button>
                          <img src={clock} className="time" />
