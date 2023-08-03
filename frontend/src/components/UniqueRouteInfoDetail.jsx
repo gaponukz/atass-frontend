@@ -44,7 +44,7 @@ const UniqueRouteInfoDetail = () => {
   const move_from = searchParams.get("move_from")
   const move_to = searchParams.get("move_to")
   const route_info = useSelector((state) => state.route.route_info)
-  //console.log(route_info);
+  console.log(route_info);
 
   useEffect(() => {
     dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }));
