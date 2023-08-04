@@ -72,13 +72,20 @@ const UniqueRouteInfoDetail = () => {
             <hr className="horiz" />
             <div className="dop">
               <p className="te zagol" >Опис:</p>
-              <p className="te">{route_info?.description?.ua}</p>
-              <p className="te zagol">Правила поїздки:</p>
+              <div className="for_pppppppp">
               <p className="te">{route_info?.rules?.ua}</p>
-              <p className="te zagol">Правила перевезення:</p>
-              <p className="te">{route_info?.transportation_rules?.ua}</p>
-            </div>
-            <hr Name="horiz"/>
+              </div>
+              <p className="te zagol">Правила поїздки:</p>
+              <div className="for_pppppppp">
+              <p className="te">{route_info?.rules?.ua}</p>
+              </div>
+              <p className="te zagol hza">Правила перевезення:</p>
+              <div className="for_pppppppp">
+              <p className="te">{route_info?.rules?.ua}</p>
+              </div>
+              </div>
+                          
+            <hr className="horiz ho"/>
           </ul>
           <div class="butto">
             <button 

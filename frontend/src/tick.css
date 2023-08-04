@@ -13,7 +13,12 @@
    }
    .zagol{
     font-weight: bold;
+  
    }
+   .for_pppppppp{
+     width: 200%;
+   }
+
    /*.upxxxx{
      text-align: center;
      width: 50%;
@@ -153,6 +158,18 @@
    }
    
    @media (max-width: 800px){
+
+    .for_pppppppp{
+      width: 180%;
+    }
+    .te{
+      width: 90%;
+    }
+    .ho{
+      display: none;
+    }
+
+
      .test_s{
        position: absolute;
        margin-top: 10%;
@@ -192,7 +209,7 @@
        font-size: 23px;
      }
      .butto{
-       margin-right: 25%;
+       margin-right: 35%;
      }
      .dop{
        width: 100%;
