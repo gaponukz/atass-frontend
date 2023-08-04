@@ -2,6 +2,16 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const BASE_URL = "http://localhost:8000";
+const BASE_URL_USER = "http://localhost:8080";
+
+export const getUserIdRoute = createAsyncThunk("data/getUserIdRoute", async () => {
+     const response = await axios.get(`${BASE_URL_USER}/getUserInfo`, {
+          withCredentials: true
+     })
+     console.log(response.data);
+ 
+     return response.data
+ })
 
 export const getRouteInfo = createAsyncThunk("route/getRouteInfo", async ({ fromCity, toCity, date }) => {
      console.log("here");
@@ -33,7 +43,12 @@ const routeSlice = createSlice({
      name: "route",
      initialState: {
          route_family: [],
-         route_info: []
+         route_info: [],
+         user: {
+          err: "",
+          info: {},
+          succedded: false
+         }
      },
      reducers: {
 
@@ -64,6 +79,17 @@ const routeSlice = createSlice({
                })
                .addCase(getRouteInfoDetail.rejected, (state, action) => {
                     console.log("n1-");
+               })
+               .addCase(getUserIdRoute.pending, (state) => {
+                    console.log("u?");
+               })
+               .addCase(getUserIdRoute.fulfilled, (state, action) => {
+                    console.log("u+");
+                    state.user.succedded = true;
+               })
+               .addCase(getUserIdRoute.rejected, (state, action) => {
+                    console.log("u-");
+                    state.user.err = action.error.message;
                })
      }
 })

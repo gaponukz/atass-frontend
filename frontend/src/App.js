@@ -51,6 +51,8 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />}/>
         <Route path="/reset-password" element={<ResetPassword />}/>
         <Route path="/edit-profile" element={<EditProfile />}/>
+        <Route path="/1" element={<>1</>}/>
+        <Route path="/2" element={<>2</>}/>
         {/* <Route path="/404" element={<PageNotFound />} />
         <Route path="*" element={<Navigate to="/404" />} /> */}
         <Route path="*" element={<PageNotFound />} />
