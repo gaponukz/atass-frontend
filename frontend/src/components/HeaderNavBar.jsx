@@ -8,9 +8,13 @@ import worlwide from "./static/images/worldwide.png";
 import chat from "./static/images/chat.png"
 
 import { NavLink, useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 
 const HeaderNavBar = () => {
+  const authorized = useSelector((state) => state.getUser.authorized);
+  console.log(authorized);
+   
 
    const navigate = useNavigate();
 
@@ -41,7 +45,7 @@ const HeaderNavBar = () => {
                               navigate("/user-profile")
                               navigate(0)
                            }}
-                        >Увійти</a></li>
+                        >{(authorized) ? (<p>Особистий кабінет</p>): (<p>Увійти</p>)}</a></li>
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
                            <li className="onas"><a href="#" >О нас</a></li>

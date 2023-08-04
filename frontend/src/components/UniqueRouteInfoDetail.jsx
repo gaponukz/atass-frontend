@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
-import { getRouteInfoDetail, getUserIdRoute } from "../features/getRoute/getRouteData"
+import { getRouteInfoDetail, getUserIdRoute, idleStatus } from "../features/getRoute/getRouteData"
 
 const UniqueRouteInfoDetail = () => {
 
@@ -31,7 +31,8 @@ const UniqueRouteInfoDetail = () => {
   useEffect(() => {
     if (err === "Request failed with status code 401") {
       console.log("tyt");
-      navigate("/2")
+      navigate("/passenger-payment-nf")
+      dispatch(idleStatus())
     }
   }, [err])
 
@@ -39,6 +40,7 @@ const UniqueRouteInfoDetail = () => {
     if (succedded) {
       console.log("tyt1");
       navigate("/1")
+      dispatch(idleStatus())
     }
   }, [succedded])
 

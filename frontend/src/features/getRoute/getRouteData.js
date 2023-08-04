@@ -4,6 +4,7 @@ import axios from "axios";
 const BASE_URL = "http://localhost:8000";
 const BASE_URL_USER = "http://localhost:8080";
 
+
 export const getUserIdRoute = createAsyncThunk("data/getUserIdRoute", async () => {
      const response = await axios.get(`${BASE_URL_USER}/getUserInfo`, {
           withCredentials: true
@@ -51,7 +52,10 @@ const routeSlice = createSlice({
          }
      },
      reducers: {
-
+          idleStatus: (state) => {
+               state.user.succedded = false;
+               state.user.err = "";
+          }
      },
      extraReducers: (builder) => {
           builder
@@ -94,5 +98,5 @@ const routeSlice = createSlice({
      }
 })
 
-export const { } = routeSlice.actions;
+export const { idleStatus } = routeSlice.actions;
 export default routeSlice.reducer;
