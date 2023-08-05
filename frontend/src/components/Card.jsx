@@ -9,10 +9,10 @@ const Card = ({ time_from, city_from, id_from, time_to, city_to, id_to, price, r
      const navigate = useNavigate();
 
      const parsed_time_from_pre = new Date(time_from);
-     const parsed_time_from = `${parsed_time_from_pre.getHours()} : ${parsed_time_from_pre.getMinutes()}`;
+     const parsed_time_from = `${parsed_time_from_pre.getHours().toString().padStart(2, "0")} : ${parsed_time_from_pre.getMinutes().toString().padStart(2, "0")}`;
      
      const parsed_time_to_pre = new Date(time_to);
-     const parsed_time_to = `${parsed_time_to_pre.getHours()} : ${parsed_time_to_pre.getMinutes()}`;
+     const parsed_time_to = `${parsed_time_to_pre.getHours().toString().padStart(2, "0")} : ${parsed_time_to_pre.getMinutes().toString().padStart(2, "0")}`;
 
      //console.log("start");
      //console.log(parsed_time_from_pre);

@@ -26,7 +26,8 @@ const UniqueRouteInfoDetail = () => {
   const route_info = useSelector((state) => state.route.route_info)
   const err = useSelector((state) => state.route.user.err)
   const succedded = useSelector((state) => state.route.user.succedded)
-  // console.log(err);
+  const user = useSelector((state) => state.route.user.info)
+
 
   useEffect(() => {
     if (err === "Request failed with status code 401") {
@@ -38,9 +39,23 @@ const UniqueRouteInfoDetail = () => {
 
   useEffect(() => {
     if (succedded) {
-      console.log("tyt1");
-      navigate("/1")
-      dispatch(idleStatus())
+      //console.log(user);
+      const obj = {
+        "amount": route_info.price,
+        "routeId": route_info.root_route_id,
+        "passenger": {
+          "id": "",
+          "gmail": user.gmail,
+          "fullName": user.fullName,
+          "phoneNumber": user.phoneNumber,
+          "movingFromId": route_info.move_from.id,
+          "movingTowardsId": route_info.move_to.id
+        }
+      }
+      console.log(obj);
+      // postPaymnet()
+      // navigate("/1")
+      // dispatch(idleStatus())
     }
   }, [succedded])
 
@@ -59,12 +74,12 @@ const UniqueRouteInfoDetail = () => {
               <div className="test_s">
                 <p className="for_s" ></p></div>
               <li>
-                <time >{move_from_pre.getHours()}:{move_from_pre.getMinutes()}</time>
-                <span style={{textAlign: "left"}}><strong>{route_info?.move_from?.place?.street},{route_info?.move_from?.place?.city},{route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
+                <time >{move_from_pre.getHours().toString().padStart(2, "0")}:{move_from_pre.getMinutes().toString().padStart(2, "0")}</time>
+                <span style={{ textAlign: "left" }}><strong>{route_info?.move_from?.place?.street},{route_info?.move_from?.place?.city},{route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
             <a href="#" className="link">
               <li>
-                <time >{move_to_pre.getHours()}:{move_to_pre.getMinutes()}</time>
-                <span style={{textAlign: "left"}}><strong>{route_info?.move_to?.place?.street},{route_info?.move_to?.place?.city},{route_info?.move_to?.place?.country}</strong>{route_info?.move_to?.place?.city} </span></li></a>
+                <time >{move_to_pre.getHours().toString().padStart(2, "0")}:{move_to_pre.getMinutes().toString().padStart(2, "0")}</time>
+                <span style={{ textAlign: "left" }}><strong>{route_info?.move_to?.place?.street},{route_info?.move_to?.place?.city},{route_info?.move_to?.place?.country}</strong>{route_info?.move_to?.place?.city} </span></li></a>
             <hr className="horiz" />
             <div className="money">
               <p className="tex">Ціна</p>
@@ -75,25 +90,25 @@ const UniqueRouteInfoDetail = () => {
             <div className="dop">
               <p className="te zagol" >Опис:</p>
               <div className="for_pppppppp">
-              <p className="te">{route_info?.rules?.ua}</p>
+                <p className="te">{route_info?.rules?.ua}</p>
               </div>
               <p className="te zagol">Правила поїздки:</p>
               <div className="for_pppppppp">
-              <p className="te">{route_info?.rules?.ua}</p>
+                <p className="te">{route_info?.rules?.ua}</p>
               </div>
               <p className="te zagol hza">Правила перевезення:</p>
               <div className="for_pppppppp">
-              <p className="te">{route_info?.rules?.ua}</p>
+                <p className="te">{route_info?.rules?.ua}</p>
               </div>
-              </div>
-                          
-            <hr className="horiz ho"/>
+            </div>
+
+            <hr className="horiz ho" />
           </ul>
           <div class="butto">
-            <button 
-              type="button" 
-              className="btn yuiooo" 
-              style={{backgroundColor: "#40ABCF", color:"white", fontWeight: "bold"}} 
+            <button
+              type="button"
+              className="btn yuiooo"
+              style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
               id="knop"
               onClick={handleButtonClick}
             >

@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { postPaymnet } from '../features/payment/paymentSlice';
+import { useNavigate } from 'react-router-dom';
 
 const ProccessPaymentNF = () => {
      const route_info = useSelector((state) => state.route.route_info)
-     console.log(route_info);
+
+     const dispatch = useDispatch();
+     const navigate = useNavigate()
 
      const [name, setName] = useState("");
      const [phone, setPhone] = useState("");
@@ -23,7 +27,16 @@ const ProccessPaymentNF = () => {
                }
           }
           console.log(obj);
+          dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
+               gmail: email, fullName: name, phoneNumber: phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
+          }))
      }
+
+     useEffect(() => {
+          if (route_info.length === 0) {
+               navigate("/")
+          }
+     }, [route_info])
 
      return (
           <div>

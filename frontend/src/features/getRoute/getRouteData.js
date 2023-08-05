@@ -9,7 +9,7 @@ export const getUserIdRoute = createAsyncThunk("data/getUserIdRoute", async () =
      const response = await axios.get(`${BASE_URL_USER}/getUserInfo`, {
           withCredentials: true
      })
-     console.log(response.data);
+     //console.log(response.data);
  
      return response.data
  })
@@ -90,6 +90,7 @@ const routeSlice = createSlice({
                .addCase(getUserIdRoute.fulfilled, (state, action) => {
                     console.log("u+");
                     state.user.succedded = true;
+                    state.user.info = {...action.payload};
                })
                .addCase(getUserIdRoute.rejected, (state, action) => {
                     console.log("u-");
