@@ -1,7 +1,7 @@
 import { useState } from "react"
 import loop from "./static/images/loop.png"
 import { useNavigate } from "react-router-dom";
-
+import { Hint } from 'react-autocomplete-hint';
 
 const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) => {
 
@@ -12,6 +12,8 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
 
      // helper functions
      const navigate = useNavigate();
+
+     const hintData = ['Київ', 'Львів', 'Варшава']
 
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
@@ -31,31 +33,31 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                <div className="big12">
                     <div className="input-group" id="sadasd">
                          <div className="form-floating mb-3" id="fr">
-                              <input 
-                                   type="text" 
-                                   id="from" 
-                                   className="form-control sadadas" 
-                                   placeholder="Звідки?" 
-                                   name="from" 
-                                   autoComplete="off" 
-                                   required 
-                                   value={moveFrom}
-                                   onChange={(e) => setMoveFrom(e.target.value)}
-                              />
-                              <label htmlFor="from">Звідки?</label>
+                              <Hint options={hintData} allowTabFill allowEnterFill>
+                                   <input 
+                                        type="text" 
+                                        id="from" 
+                                        className="form-control sadadas" 
+                                        placeholder="Звідки?" 
+                                        name="from" 
+                                        required 
+                                        value={moveFrom}
+                                        onChange={(e) => setMoveFrom(e.target.value)}
+                                   />
+                              </Hint>
                          </div>
                          <div className="form-floating mb-3" id="t">
-                              <input 
-                                   type="text" 
-                                   id="to" 
-                                   className="form-control sadadas" 
-                                   name="to" placeholder="Куди?" 
-                                   autoComplete="off" 
-                                   required 
-                                   value={moveTo}
-                                   onChange={(e) => setMoveTo(e.target.value)}
-                              />
-                              <label htmlFor="to">Куди?</label>
+                              <Hint options={hintData} allowTabFill allowEnterFill>
+                                   <input 
+                                        type="text" 
+                                        id="to" 
+                                        className="form-control sadadas" 
+                                        name="to" placeholder="Куди?" 
+                                        required 
+                                        value={moveTo}
+                                        onChange={(e) => setMoveTo(e.target.value)}
+                                   />
+                              </Hint>
                          </div>
 
 
@@ -89,35 +91,35 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                <div className="small56 ">
                     <div className="input-grou" >
                          <div className="form-floating mb-3 test12" id="he">
-                              <input 
-                                   type="text" 
-                                   id="from1" 
-                                   className="form-control sadadas" 
-                                   name="from" placeholder="Звідки?" 
-                                   autoComplete="off" 
-                                   required 
-                                   style={{ display: "block" }} 
-                                   value={moveFrom}
-                                   onChange={(e) => setMoveFrom(e.target.value)}
-                              />
-                              <label htmlFor="from1">Звідки?</label>
+                              <Hint options={hintData} allowTabFill allowEnterFill>
+                                   <input 
+                                        type="text" 
+                                        id="from1" 
+                                        className="form-control sadadas" 
+                                        name="from" placeholder="Звідки?" 
+                                        required 
+                                        style={{ display: "block" }} 
+                                        value={moveFrom}
+                                        onChange={(e) => setMoveFrom(e.target.value)}
+                                   />
+                              </Hint>
                          </div>
                     </div>
                     <div className="input-grou" >
                          <div className="form-floating mb-3 test12">
-                              <input 
-                                   type="text" 
-                                   id="to1" 
-                                   className="form-control sadadas" 
-                                   name="to" 
-                                   placeholder="Куди?" 
-                                   autoComplete="off" 
-                                   required 
-                                   style={{ display: "block" }} 
-                                   value={moveTo}
-                                   onChange={(e) => setMoveTo(e.target.value)}
-                              />
-                              <label htmlFor="to1">Куди?</label>
+                              <Hint options={hintData} allowTabFill allowEnterFill>
+                                   <input 
+                                        type="text" 
+                                        id="to1" 
+                                        className="form-control sadadas" 
+                                        name="to" 
+                                        placeholder="Куди?" 
+                                        required 
+                                        style={{ display: "block" }} 
+                                        value={moveTo}
+                                        onChange={(e) => setMoveTo(e.target.value)}
+                                   />
+                              </Hint>
                          </div>
                     </div>
                     <div className="input-grou" >
