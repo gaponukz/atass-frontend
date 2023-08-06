@@ -29,7 +29,9 @@ const ProccessPaymentNF = () => {
           console.log(obj);
           dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
                gmail: email, fullName: name, phoneNumber: phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
-          }))
+          })).then(() => {
+               navigate("success-payment");
+          })
      }
 
      useEffect(() => {

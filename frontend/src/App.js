@@ -52,7 +52,7 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />}/>
         <Route path="/reset-password" element={<ResetPassword />}/>
         <Route path="/edit-profile" element={<EditProfile />}/>
-        <Route path="/1" element={<>1</>}/>
+        <Route path="/success-payment" element={<>Success</>}/>
         <Route path="/passenger-payment-nf" element={<ProccessPaymentNF />}/>
         {/* <Route path="/404" element={<PageNotFound />} />
         <Route path="*" element={<Navigate to="/404" />} /> */}

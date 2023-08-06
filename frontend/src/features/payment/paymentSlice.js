@@ -1,11 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+import { push } from 'connected-react-router';
+
 const BASE_URL = "http://localhost:8000";
 const BASE_URL_USER = "http://localhost:8080";
 const BASE_URL_PAY = "http://localhost:9090";
 
 export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, routeId, passenger, id, gmail, fullName, phoneNumber, movingFromId, movingTowardsId }) => {
+
+     console.log();
+
      const response = await axios.post(`${BASE_URL_PAY}/processPayment`, {
           "amount": amount,
           "routeId": routeId,
@@ -37,6 +42,8 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
           })
           .addCase(postPaymnet.fulfilled, (state, action) => {
                console.log("p+");
+               console.log(action.payload);
+               
           })
           .addCase(postPaymnet.rejected, (state, action) => {
                console.log("p?");

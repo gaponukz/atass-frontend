@@ -83,6 +83,7 @@ const routeSlice = createSlice({
                })
                .addCase(getRouteInfoDetail.rejected, (state, action) => {
                     console.log("n1-");
+                    
                })
                .addCase(getUserIdRoute.pending, (state) => {
                     console.log("u?");

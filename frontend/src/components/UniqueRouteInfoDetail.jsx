@@ -2,6 +2,8 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
 import { getRouteInfoDetail, getUserIdRoute, idleStatus } from "../features/getRoute/getRouteData"
+import { postPaymnet } from '../features/payment/paymentSlice';
+
 
 const UniqueRouteInfoDetail = () => {
 
@@ -53,9 +55,12 @@ const UniqueRouteInfoDetail = () => {
         }
       }
       console.log(obj);
-      // postPaymnet()
-      // navigate("/1")
-      // dispatch(idleStatus())
+      dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
+        gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
+      })).then(() => {
+        navigate("success-payment");
+      })
+      dispatch(idleStatus())
     }
   }, [succedded])
 
