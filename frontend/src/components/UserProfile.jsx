@@ -3,6 +3,8 @@ import { chageFlagStatusFalse } from "../features/post/PostSlice";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom"
 
+import { unwrapResult } from "@reduxjs/toolkit";
+
 import { useDispatch, useSelector } from "react-redux";
 import avatar from "./static/images/icons8-avatar-96.png"
 
@@ -18,18 +20,29 @@ const UserProfile = () => {
 
   useEffect(() => {
     dispatch(getUserId())
+      .then(unwrapResult)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        if (err.message === "Request failed with status code 401") {
+          console.log("here");
+          navigate("/sign-in");
+        }
+      })
   }, [])
 
   const handleButtonCLick = () => {
     dispatch(logUserOut())
   }
 
-  useEffect(() => {
-    if (err === "Request failed with status code 401") {
-      console.log("here");
-      navigate("/sign-in");
-    }
-  }, [err])
+  // useEffect(() => {
+  //   if (err === "Request failed with status code 401") {
+  //     console.log("here");
+  //     navigate("/sign-in");
+  //   }
+  // }, [err])
 
   useEffect(() => {
     if (logout) {
@@ -56,12 +69,12 @@ const UserProfile = () => {
         <h5 className="sss">{userInfo.phone}</h5>
       </div>
       <div className="butttt">
-      <button
-        className="btn ty"
-        style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
-        onClick={handleButtonCLick}>
-        <span>Log out</span>
-                </button></div>
+        <button
+          className="btn ty"
+          style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
+          onClick={handleButtonCLick}>
+          <span>Log out</span>
+        </button></div>
     </>
   )
 }
