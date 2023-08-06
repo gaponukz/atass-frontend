@@ -76,6 +76,9 @@ nav span{
     background-color: #4A85E3;
 
 }
+#date{
+    height: 60px;
+}
 #sadasd{
     padding-top: 35px;
     width: 79.5%;
@@ -83,6 +86,7 @@ nav span{
     padding-bottom: 20px;
 
 }
+
 #fr label{
     padding-left: 30%;
 }
@@ -93,7 +97,7 @@ nav span{
 
 }
 .sadadas{
-
+    border-radius: 0px;
     height: 60px;
 }
 #knop{
@@ -159,6 +163,9 @@ nav span{
     border: none;
     margin-bottom: 11px;
     height: 40px;
+}
+#from{
+    border-radius: 10px 0px 0px 10px;
 }
 .pic1111{
     margin-right: 5px;
@@ -235,6 +242,7 @@ nav span{
     margin-bottom: 16.5%;
 }
 @media (max-width: 800px) {
+
     
 
     .container-fluid button:focus,.container-fluid button:active{
@@ -451,9 +459,12 @@ nav span{
       outline:none !important;
       border: none;
       width: 120%;
-      height: 10px;
-
+      height: 52px;
+      
   }
+#from1{
+    border-radius: 10px 10px 0px 0px;
+}  
   .input-grou{
       box-shadow: none;
       outline:none;
@@ -482,7 +493,7 @@ nav span{
       height: 25px;
   }
    .small56{
-       padding-left: 14%;
+       padding-left: 16%;
        
        padding-top: 18px;
        

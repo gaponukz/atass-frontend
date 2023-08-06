@@ -37,7 +37,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                                    <input 
                                         type="text" 
                                         id="from" 
-                                        className="form-control sadadas" 
+                                        className="form-control sadadas " 
                                         placeholder="Звідки?" 
                                         name="from" 
                                         required 
