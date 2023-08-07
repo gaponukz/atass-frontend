@@ -15,6 +15,7 @@ import UniqRouteInfo from "./components/UniqRouteInfo";
 import UniqueRouteInfoDetail from "./components/UniqueRouteInfoDetail";
 import ProccessPaymentNF from "./components/ProccessPaymentNF";
 import UserRoutes from "./components/UserRoutes";
+import SuccessPaymnet from "./components/SuccessPaymnet";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
@@ -53,17 +54,9 @@ function App() {
         <Route path="/user-profile" element={<UserProfile />}/>
         <Route path="/reset-password" element={<ResetPassword />}/>
         <Route path="/edit-profile" element={<EditProfile />}/>
-        <Route path="/success-payment" element={<>
-          <div class="success-container">
-        <img src="static/images/checked.png" alt="Успешно"/>
-        <h1>Оплата прошла успешно!</h1>
-        <p>Спасибо за оплату. Чек автоматически отправится вам на почту</p>
-        <a href="#">Вернуться на главную</a>
-    </div></>}/>
+        <Route path="/success-payment" element={<SuccessPaymnet />}/>
         <Route path="/user-routes" element={<UserRoutes />}/>
         <Route path="/passenger-payment-nf" element={<ProccessPaymentNF />}/>
-        {/* <Route path="/404" element={<PageNotFound />} />
-        <Route path="*" element={<Navigate to="/404" />} /> */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
