@@ -12,10 +12,8 @@ import { useSelector } from "react-redux"
 
 
 const HeaderNavBar = () => {
-  const authorized = useSelector((state) => state.getUser.authorized);
-  console.log(authorized);
-   
-
+   const authorized = useSelector((state) => state.getUser.authorized);
+   //console.log(authorized);
    const navigate = useNavigate();
 
    return (
@@ -45,10 +43,12 @@ const HeaderNavBar = () => {
                               navigate("/user-profile")
                               navigate(0)
                            }}
-                        >{(authorized) ? (<p>Особистий кабінет</p>): (<p>Увійти</p>)}</a></li>
+                        >{(authorized) ? (<p>Особистий кабінет</p>) : (<p>Увійти</p>)}</a></li>
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
                            <li className="onas"><a href="#" >О нас</a></li>
+                           <li><NavLink to="/user-routes">Мої поїздки</NavLink></li>
+
                         </div></ul>
                      <div id="selec">
                         <img src={icons8_globe_96} className="world" style={{ float: "left" }} />
@@ -76,6 +76,7 @@ const HeaderNavBar = () => {
                   <option value="pl">Polski</option>
                </select>
                <li ><NavLink to="/about-us">Про нас</NavLink></li>
+               <li><NavLink to="/user-routes">Мої поїздки</NavLink></li>
                <li><NavLink to="/user-profile">Особистий кабінет</NavLink></li>
             </ul>
          </nav>

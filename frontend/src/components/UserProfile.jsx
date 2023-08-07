@@ -22,12 +22,12 @@ const UserProfile = () => {
     dispatch(getUserId())
       .then(unwrapResult)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         if (err.message === "Request failed with status code 401") {
-          console.log("here");
+          // console.log("here");
           navigate("/sign-in");
         }
       })

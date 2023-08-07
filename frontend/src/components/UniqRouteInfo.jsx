@@ -110,7 +110,7 @@ const UniqRouteInfo = () => {
   const move_from_city = searchParams.get("move_from_city")
   const move_to_city = searchParams.get("move_to_city")
   const date = searchParams.get("date")
-  // console.log(move_from_city, move_to_city, date);
+
   console.log(route_family);
 
   // useEffect(() => {

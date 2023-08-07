@@ -3,12 +3,22 @@ import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
 import { getRouteInfoDetail, getUserIdRoute, idleStatus } from "../features/getRoute/getRouteData"
 import { postPaymnet } from '../features/payment/paymentSlice';
+import { unwrapResult } from "@reduxjs/toolkit";
 
 
 const UniqueRouteInfoDetail = () => {
 
   const handleButtonClick = () => {
     dispatch(getUserIdRoute())
+    .then(unwrapResult)
+      .catch((err) => {
+        console.log(err);
+        if (err.message === "Request failed with status code 401") {
+               console.log("tyt");
+               navigate("/passenger-payment-nf")
+               dispatch(idleStatus())
+          }
+      })
   }
 
   // helper
@@ -22,7 +32,8 @@ const UniqueRouteInfoDetail = () => {
   const move_to = searchParams.get("move_to")
 
   useEffect(() => {
-    dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }));
+    dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }))
+
   }, [])
 
   const route_info = useSelector((state) => state.route.route_info)
@@ -31,13 +42,13 @@ const UniqueRouteInfoDetail = () => {
   const user = useSelector((state) => state.route.user.info)
 
 
-  useEffect(() => {
-    if (err === "Request failed with status code 401") {
-      console.log("tyt");
-      navigate("/passenger-payment-nf")
-      dispatch(idleStatus())
-    }
-  }, [err])
+  // useEffect(() => {
+  //   if (err === "Request failed with status code 401") {
+  //     console.log("tyt");
+  //     navigate("/passenger-payment-nf")
+  //     dispatch(idleStatus())
+  //   }
+  // }, [err])
 
   useEffect(() => {
     if (succedded) {
@@ -58,7 +69,7 @@ const UniqueRouteInfoDetail = () => {
       dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
         gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
       })).then(() => {
-        navigate("success-payment");
+        navigate("/success-payment");
       })
       dispatch(idleStatus())
     }

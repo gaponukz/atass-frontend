@@ -40,6 +40,13 @@ export const refreshUser = createAsyncThunk("data/refreshUser", async () => {
     return response.data
 })
 
+export const getUserRoutes = createAsyncThunk("data/getUserRoutes", async () => {
+    const response = await axios.get(`${BASE_URL}/getUserRoutes`)
+    //console.log(response.data);
+
+    return response.data
+})
+
 const dataSlice = createSlice({
     name: 'data',
     initialState: {
@@ -49,6 +56,8 @@ const dataSlice = createSlice({
       logout: false,
       authorized: false,
       flag: false,
+      userNotHaveRoutes: false,
+      userRoutes: []
     },
     reducers: {
         changeLogout: (state, action) => {
@@ -112,6 +121,21 @@ const dataSlice = createSlice({
                 if (action.error.message === "Request failed with status code 401") {
                     state.flag = true;
                 }
+            })
+            .addCase(getUserRoutes.pending, (state) => {
+                console.log("?");
+            })
+            .addCase(getUserRoutes.fulfilled, (state, action) => {
+                console.log("+", action.payload);
+                if (action.payload === null) {
+                    state.userNotHaveRoutes = true;
+                }
+                else {
+                    state.userRoutes = [...action.payload]
+                }
+            })
+            .addCase(getUserRoutes.rejected, (state, action) => {
+                console.log("-", action.error.message);
             })
     }
 })

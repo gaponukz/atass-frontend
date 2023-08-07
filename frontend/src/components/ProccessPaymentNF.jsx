@@ -30,7 +30,7 @@ const ProccessPaymentNF = () => {
           dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
                gmail: email, fullName: name, phoneNumber: phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
           })).then(() => {
-               navigate("success-payment");
+               navigate("/success-payment");
           })
      }
 
@@ -70,12 +70,12 @@ const ProccessPaymentNF = () => {
                               />
                          </div>
                     </div>
-                    <div class="form-group xpo">
+                    <div className="form-group xpo">
                          <label for="email">Email:</label>
-                         <div class="input-group rey mb-3 ">
+                         <div className="input-group rey mb-3 ">
                               <input
                                    type="text"
-                                   class="form-control zxc"
+                                   className="form-control zxc"
                                    aria-label="Recipient's username"
                                    aria-describedby="button-addon2"
                                    value={email}
@@ -83,10 +83,10 @@ const ProccessPaymentNF = () => {
                               />
                          </div>
                     </div>
-                    <div class="btn-container">
-                         <div class="but1">
+                    <div className="btn-container">
+                         <div className="but1">
                               <button
-                                   class="btn oi"
+                                   className="btn oi"
                                    onClick={handleButtonClick}
                               >Підтвердити</button>
                          </div>
