@@ -2,6 +2,7 @@ import main_logo from "./static/images/Logo.png"
 import icons8_erson_96 from "./static/images/icons8-person-96.png"
 import icons8_contact_us_96 from "./static/images/icons8-contact-us-96.png"
 import icons8_globe_96 from "./static/images/icons8-globe-96.png"
+import icons8_bus_96 from "./static/images/icons8-bus-96.png"
 import loop from "./static/images/loop.png"
 import ticket from "./static/images/ticket.png"
 import worlwide from "./static/images/worldwide.png";
@@ -47,7 +48,9 @@ const HeaderNavBar = () => {
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
                            <li className="onas"><a href="#" >О нас</a></li>
-                           <li><NavLink to="/user-routes">Мої поїздки</NavLink></li>
+                           <div className="erty">
+                           <img src={icons8_bus_96} className="person" style={{ float: "left" }} />
+                           <li className="msssss"><NavLink to="user-routes">Мої поїздки</NavLink></li></div>
 
                         </div></ul>
                      <div id="selec">

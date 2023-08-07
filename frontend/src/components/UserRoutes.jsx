@@ -31,7 +31,7 @@ const UserRoutes = () => {
                {(userCheck) ? (<>у вас ще немає марштрутів</>) : (<>Ваші маршрути Oleg html</>)}
 
 
-               <div class="container">
+               <div class="container qty">
                     <h1 class="first_name">Ваші поїздки</h1>
                     <div class="rov">
                          <div class="card new_card" >
