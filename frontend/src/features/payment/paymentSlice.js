@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { push } from 'connected-react-router';
-
 const BASE_URL = "http://localhost:8000";
 const BASE_URL_USER = "http://localhost:8080";
 const BASE_URL_PAY = "http://localhost:9090";
