@@ -1,0 +1,133 @@
+.container{
+    text-align: center;
+    padding-top: 5%;
+
+}
+.first_name{
+    padding-bottom: 2%;
+    margin-right: 10%;
+}
+.new_card{
+    margin-bottom: 5%;
+    margin-left: 20%;
+    width: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+   
+}
+
+.glav_data{
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    
+}
+
+
+.events li {
+    
+    display: flex; 
+    color: #054652;
+  }
+  
+  .events time { 
+
+    
+    position: relative;
+    padding: 0 1.5em;  }
+  
+    .events time::after { 
+        content: "";
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 0;
+        transform: translateX(50%);
+        border-radius: 50%;
+        background: #FFFFFF;
+        border: 1px #ccc solid;
+        width: .8em;
+        height: .8em;
+     }
+  
+  
+  .events span {
+    padding: 0 1.5em 1.5em 1.5em;
+    position: relative;
+  }
+  
+ .events span::before{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  height: 100%;
+  border-left: 1px #ccc solid;
+}
+  
+  .events strong {
+     display: block;
+     font-weight: bolder;
+  }
+  
+  .events { margin: 1em; width: 50%; }
+  .events, 
+  .events *::before, 
+  .events *::after { box-sizing: border-box; font-family: arial; }
+  
+  .events{
+    margin-top: 10%;
+    margin-left: -10%;
+}
+@media (max-width: 800px){
+    .first_name{
+        margin-right: 0;
+        margin-left: 3%;
+    }
+    .new_card{
+        width: 70%;
+    }
+    .glav_data{
+        font-size: 17px;
+    }
+    .card-body{
+        height: 200px;
+    }
+    .events{
+        margin-top: 20%;
+        margin-left: -21%;
+    }
+    .rov{
+     position: absolute;
+     right: 4%;
+     width: 100%;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 369px){
+    .events{
+        margin-top: 30%;
+        margin-left: -21%;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 800px){
+    .events{
+        margin-top: 15%;
+        margin-left: -11%;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 1200px){
+    .events{
+        margin-top: 15%;
+    }
+  }
+  @media (min-width: 500px) and (max-width: 700px){
+    .events{
+        margin-left: -13%;
+    }
+  }
+  @media (min-width: 600px) and (max-width: 700px){
+    .events{
+        margin-top: 15%;
+    }
+  }        

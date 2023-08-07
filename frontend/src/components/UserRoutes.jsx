@@ -37,7 +37,7 @@ const UserRoutes = () => {
                          <div class="card new_card" >
                               <div class="card-body">
                                    <p class="glav_data">Ср,5 лип,15 00</p>
-                                   <ul class="events ert">
+                                   <ul class="events ">
                                         <li>
                                              <time >02:00</time>
                                              <span class="test" style={{textAlign: "left"}}><strong>Київ</strong></span></li>
@@ -50,7 +50,7 @@ const UserRoutes = () => {
                          <div class="card new_card" >
                               <div class="card-body">
                                    <p class="glav_data">Ср,5 лип,15 00</p>
-                                   <ul class="events ert">
+                                   <ul class="events ">
                                         <li>
                                              <time >02:00</time>
                                              <span class="test" style={{textAlign: "left"}}><strong>Київ</strong></span></li>

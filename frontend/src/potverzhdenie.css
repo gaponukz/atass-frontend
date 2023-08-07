@@ -1,0 +1,31 @@
+.wer {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+
+.success-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 10%;
+
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  
+}
+.success-container a{
+  color: orange;
+  font-weight: bold;
+}
+.success-container h1{
+  font-size: 25px;
+  font-weight: bold;
+}
