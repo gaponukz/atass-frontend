@@ -40,6 +40,26 @@ export const getRouteInfoDetail = createAsyncThunk("route/getRouteInfoDetail", a
      return response.data;
 })
 
+export const getRouteHint = createAsyncThunk("route/getRouteHint", async () => {
+     const response = await axios.get(`${BASE_URL}/availability_graph`, 
+     {
+          withCredentials: false
+     })
+     // console.log(response.data);
+     
+     return response.data;
+})
+
+export const getUserRoute = createAsyncThunk("route/getUserRoute", async ({ routeid, fromId, toId }) => {
+     const response = await axios.get(`${BASE_URL}/get_path_info?route_id=${routeid}&move_from=${fromId}&move_to=${toId}`, 
+     {
+          withCredentials: false
+     })
+     // console.log(response.data);
+     
+     return response.data;
+})
+
 const routeSlice = createSlice({
      name: "route",
      initialState: {
@@ -96,6 +116,24 @@ const routeSlice = createSlice({
                .addCase(getUserIdRoute.rejected, (state, action) => {
                     console.log("u-");
                     state.user.err = action.error.message;
+               })
+               .addCase(getRouteHint.pending, (state) => {
+                    //console.log("h?");
+               })
+               .addCase(getRouteHint.fulfilled, (state, action) => {
+                    //console.log("h+");
+               })
+               .addCase(getRouteHint.rejected, (state, action) => {
+                    //console.log("h-");
+               })
+               .addCase(getUserRoute.pending, (state) => {
+                    //console.log("t?");
+               })
+               .addCase(getUserRoute.fulfilled, (state, action) => {
+                    //console.log("+");
+               })
+               .addCase(getUserRoute.rejected, (state, action) => {
+                    //console.log("h-");
                })
      }
 })

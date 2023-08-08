@@ -1,7 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import loop from "./static/images/loop.png"
 import { useNavigate } from "react-router-dom";
 import { Hint } from 'react-autocomplete-hint';
+import { useDispatch } from "react-redux";
+import { getRouteHint } from "../features/getRoute/getRouteData";
+import { unwrapResult } from "@reduxjs/toolkit";
+
+import { ToastContainer, toast } from 'react-toastify';
+
+
+function containsNumbers(str) {
+     return /\d/.test(str);
+}
+   
 
 const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) => {
 
@@ -12,24 +23,40 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
 
      // helper functions
      const navigate = useNavigate();
+     const dispatch = useDispatch();
+     
+     useEffect(() => {
+          dispatch(getRouteHint())
+               .then(unwrapResult)
+               .then((res) => {
+                    //console.log(res);
+               })
+     }, [])
 
      const hintData = ['Київ', 'Львів', 'Варшава']
 
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
-          console.log("here", moveFrom, moveTo, datePrepared); // route?move_from_city=Ac&move_to_city=Bc&date=02.08.2023
+          //console.log("here", moveFrom, moveTo, datePrepared); // route?move_from_city=Ac&move_to_city=Bc&date=02.08.2023
 
-          if (flagNav) {
-               navigate(`?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`, { replace: true })
-               navigate(0) // refresh page
-          }   
+          if (containsNumbers(moveFrom) || containsNumbers(moveTo) || moveFrom.length === 0 || moveTo.length === 0) {
+               toast.error("Некоректні данні", {autoClose: 1500})
+          }
           else {
-               navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)
-          }  
+               if (flagNav) {
+                    navigate(`?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`, { replace: true })
+                    navigate(0) // refresh page
+               }   
+               else {
+                    navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)
+               } 
+          }
+ 
      }
  
      return (
           <>
+          <ToastContainer />
                <div className="big12">
                     <div className="input-group" id="sadasd">
                          <div className="form-floating mb-3" id="fr">
