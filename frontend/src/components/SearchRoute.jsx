@@ -17,6 +17,8 @@ function containsNumbers(str) {
 const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) => {
 
      // ui state
+     const [hintDataTo, setHintDataTo] = useState({});
+
      const [ moveFrom, setMoveFrom ] = useState(defaultMoveFrom);
      const [ moveTo, setMoveTo ] = useState(defaultMoveTo);
      const [ date, setDate ] = useState(defaultDate);
@@ -30,6 +32,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                .then(unwrapResult)
                .then((res) => {
                     //console.log(res);
+                    setHintDataTo(res)
                })
      }, [])
 
@@ -37,6 +40,9 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
 
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
+          if (date.length === 0) {
+               datePrepared = "*"   
+          }
           //console.log("here", moveFrom, moveTo, datePrepared); // route?move_from_city=Ac&move_to_city=Bc&date=02.08.2023
 
           if (containsNumbers(moveFrom) || containsNumbers(moveTo) || moveFrom.length === 0 || moveTo.length === 0) {
@@ -50,10 +56,11 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                else {
                     navigate(`route?move_from_city=${moveFrom}&move_to_city=${moveTo}&date=${datePrepared}`)
                } 
+               
           }
  
      }
- 
+     //console.log(hintDataTo[moveFrom]);
      return (
           <>
           <ToastContainer />
@@ -74,7 +81,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                               </Hint>
                          </div>
                          <div className="form-floating mb-3" id="t">
-                              <Hint options={hintData} allowTabFill allowEnterFill>
+                              <Hint options={(hintDataTo[moveFrom]) ? (hintDataTo[moveFrom]) : ([])} allowTabFill allowEnterFill>
                                    <input 
                                         type="text" 
                                         id="to" 
@@ -134,7 +141,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                     </div>
                     <div className="input-grou" >
                          <div className="form-floating mb-3 test12">
-                              <Hint options={hintData} allowTabFill allowEnterFill>
+                              <Hint options={(hintDataTo[moveFrom]) ? (hintDataTo[moveFrom]) : ([])} allowTabFill allowEnterFill>
                                    <input 
                                         type="text" 
                                         id="to1" 

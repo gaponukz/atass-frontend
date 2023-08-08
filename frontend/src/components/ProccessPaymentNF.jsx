@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -25,30 +27,31 @@ const ProccessPaymentNF = () => {
           resolver: yupResolver(schema),
      });
 
-     // [name, setName] = useState("");
-     //const [phone, setPhone] = useState("");
-     //const [email, setEmail] = useState("");
-
      const onSubmitHandler = (data) => {
-          //console.log({ data });
-          const obj = {
-               "amount": route_info.price,
-               "routeId": route_info.root_route_id,
-               "passenger": {
-                    "id": "",
-                    "gmail": data.email,
-                    "fullName": data.name,
-                    "phoneNumber": data.phoneNumber,
-                    "movingFromId": route_info.move_from.id,
-                    "movingTowardsId": route_info.move_to.id
-               }
-          }
-          console.log(obj);
-          dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
-               gmail: data.email, fullName: data.name, phoneNumber: data.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
-          })).then(() => {
-               navigate("/success-payment");
-          })
+          console.log({ data });
+
+          if  (data.phoneNumber.includes(" ")) {
+               toast.error("Неправильно введено номер\nПриклад: 09912312323", { autoClose: 1500 })
+           }
+
+          // const obj = {
+          //      "amount": route_info.price,
+          //      "routeId": route_info.root_route_id,
+          //      "passenger": {
+          //           "id": "",
+          //           "gmail": data.email,
+          //           "fullName": data.name,
+          //           "phoneNumber": data.phoneNumber,
+          //           "movingFromId": route_info.move_from.id,
+          //           "movingTowardsId": route_info.move_to.id
+          //      }
+          // }
+          // console.log(obj);
+          // dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
+          //      gmail: data.email, fullName: data.name, phoneNumber: data.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
+          // })).then(() => {
+          //      navigate("/success-payment");
+          // })
      }
 
      useEffect(() => {
@@ -59,6 +62,7 @@ const ProccessPaymentNF = () => {
 
      return (
           <div>
+               <ToastContainer />
                <form onSubmit={handleSubmit(onSubmitHandler)}>
                     <div class="container">
                          <div class="form-group xpo">
@@ -74,7 +78,7 @@ const ProccessPaymentNF = () => {
 
                                    />
                               </div>
-                              <p>{errors.name?.message}</p>
+                              {/* <p>{errors.name?.message}</p> */}
                          </div>
                          <div class="form-group xpo">
                               <label for="email">Номер телефону</label>
@@ -88,7 +92,7 @@ const ProccessPaymentNF = () => {
 
                                    />
                               </div>
-                              <p>{errors.phoneNumber?.message}</p>
+                              {/* <p>{errors.phoneNumber?.message}</p> */}
 
                          </div>
                          <div className="form-group xpo">
@@ -103,7 +107,7 @@ const ProccessPaymentNF = () => {
 
                                    />
                               </div>
-                              <p>{errors.email?.message}</p>
+                              {/* <p>{errors.email?.message}</p> */}
 
                          </div>
                          <div className="btn-container">

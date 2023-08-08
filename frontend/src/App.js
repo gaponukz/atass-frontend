@@ -16,6 +16,7 @@ import UniqueRouteInfoDetail from "./components/UniqueRouteInfoDetail";
 import ProccessPaymentNF from "./components/ProccessPaymentNF";
 import UserRoutes from "./components/UserRoutes";
 import SuccessPaymnet from "./components/SuccessPaymnet";
+import PageNotFound505 from "./components/PageNotFound505";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
@@ -58,6 +59,7 @@ function App() {
         <Route path="/user-routes" element={<UserRoutes />}/>
         <Route path="/passenger-payment-nf" element={<ProccessPaymentNF />}/>
         <Route path="*" element={<PageNotFound />} />
+        <Route path="/505" element={<PageNotFound505 />} />
       </Routes>
     </div>
   );

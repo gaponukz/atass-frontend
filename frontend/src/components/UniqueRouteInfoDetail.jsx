@@ -33,6 +33,13 @@ const UniqueRouteInfoDetail = () => {
 
   useEffect(() => {
     dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }))
+      .then(unwrapResult)
+      .catch((err) => {
+        console.log(err.message);
+        if (err.message === "Request failed with status code 404") {
+          navigate("/404")
+        }
+      })
 
   }, [])
 
@@ -52,7 +59,7 @@ const UniqueRouteInfoDetail = () => {
 
   useEffect(() => {
     if (succedded) {
-      //console.log(user);
+      console.log(user);
       const obj = {
         "amount": route_info.price,
         "routeId": route_info.root_route_id,
@@ -60,14 +67,14 @@ const UniqueRouteInfoDetail = () => {
           "id": "",
           "gmail": user.gmail,
           "fullName": user.fullName,
-          "phoneNumber": user.phoneNumber,
+          "phoneNumber": user.phone,
           "movingFromId": route_info.move_from.id,
           "movingTowardsId": route_info.move_to.id
         }
       }
       console.log(obj);
       dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
-        gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
+        gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
       })).then(() => {
         navigate("/success-payment");
       })
