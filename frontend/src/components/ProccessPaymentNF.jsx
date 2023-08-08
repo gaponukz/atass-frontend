@@ -34,24 +34,24 @@ const ProccessPaymentNF = () => {
                toast.error("Неправильно введено номер\nПриклад: 09912312323", { autoClose: 1500 })
            }
 
-          // const obj = {
-          //      "amount": route_info.price,
-          //      "routeId": route_info.root_route_id,
-          //      "passenger": {
-          //           "id": "",
-          //           "gmail": data.email,
-          //           "fullName": data.name,
-          //           "phoneNumber": data.phoneNumber,
-          //           "movingFromId": route_info.move_from.id,
-          //           "movingTowardsId": route_info.move_to.id
-          //      }
-          // }
-          // console.log(obj);
-          // dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
-          //      gmail: data.email, fullName: data.name, phoneNumber: data.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
-          // })).then(() => {
-          //      navigate("/success-payment");
-          // })
+          const obj = {
+               "amount": route_info.price,
+               "routeId": route_info.root_route_id,
+               "passenger": {
+                    "id": "",
+                    "gmail": data.email,
+                    "fullName": data.name,
+                    "phoneNumber": data.phoneNumber,
+                    "movingFromId": route_info.move_from.id,
+                    "movingTowardsId": route_info.move_to.id
+               }
+          }
+          console.log(obj);
+          dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
+               gmail: data.email, fullName: data.name, phoneNumber: data.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
+          })).then(() => {
+               navigate("/success-payment");
+          })
      }
 
      useEffect(() => {
