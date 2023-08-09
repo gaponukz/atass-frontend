@@ -34,6 +34,12 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                     //console.log(res);
                     setHintDataTo(res)
                })
+               .catch((err) => {
+                    console.log(err);
+                    if (err.message === "Network Error") {
+                         navigate("/505")
+                    }
+               })
      }, [])
 
      const hintData = ['київ', 'львів', 'варшава']
