@@ -24,19 +24,19 @@ function App() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    let interval = setInterval(() => {
-      if (!flag || authorized) {
-        // dispatch(refreshUser())
-        // console.log("SEND REFRESH");
-      }
-    }, 2000);
+  // useEffect(() => {
+  //   let interval = setInterval(() => {
+  //     if (!flag || authorized) {
+  //       // dispatch(refreshUser())
+  //       // console.log("SEND REFRESH");
+  //     }
+  //   }, 2000);
     
-    return () => {
-      clearInterval(interval);
-    };
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
 
-  }, [flag, authorized])
+  // }, [flag, authorized])
   
   
   return (

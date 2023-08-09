@@ -47,7 +47,7 @@ const ProccessPaymentNF = () => {
                }
           }
           console.log(obj);
-          dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
+          dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id, id: "",
                gmail: data.email, fullName: data.name, phoneNumber: data.phoneNumber, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
           })).then(() => {
                navigate("/success-payment");

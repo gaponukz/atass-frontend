@@ -30,6 +30,10 @@ const UserProfile = () => {
           // console.log("here");
           navigate("/sign-in");
         }
+        else if (err.message === "Network Error") {
+          console.log("tytytytytyt");
+          navigate("/505")
+        }
       })
   }, [])
 

@@ -3,6 +3,11 @@ import { useDispatch } from 'react-redux'
 import { getUserRoute } from '../features/getRoute/getRouteData'
 import { unwrapResult } from '@reduxjs/toolkit'
 
+const weeks = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+const months = ["Січень", "Лютий", "Березень", "Квітень", "Травень","Червень",
+  "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"
+]
+
 const CardRoute = ({ route_id, move_from , move_to }) => {
      const [user_res, setUserRes] = useState({});
 
@@ -26,7 +31,7 @@ const CardRoute = ({ route_id, move_from , move_to }) => {
           <div>
                <div class="card new_card" >
                     <div class="card-body">
-                         <p class="glav_data">Ср,5 лип,{parsed_time_from}</p>
+                         <p class="glav_data">{weeks[parsed_time_from_pre.getDay()]},{parsed_time_from_pre.getDate()} {months[parsed_time_from_pre.getMonth()].toLocaleLowerCase()},{parsed_time_from}</p>
                          <ul class="event ">
                               <li>
                                    <time >{parsed_time_from}</time>

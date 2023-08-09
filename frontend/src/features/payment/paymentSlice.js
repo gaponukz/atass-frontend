@@ -13,7 +13,7 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
           "amount": amount,
           "routeId": routeId,
           "passenger": {
-              "id": "",
+              "id": id,
               "gmail": gmail,
               "fullName": fullName,
               "phoneNumber": phoneNumber,

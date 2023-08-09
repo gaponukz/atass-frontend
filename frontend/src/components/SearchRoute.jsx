@@ -36,7 +36,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                })
      }, [])
 
-     const hintData = ['Київ', 'Львів', 'Варшава']
+     const hintData = ['київ', 'львів', 'варшава']
 
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
@@ -81,7 +81,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                               </Hint>
                          </div>
                          <div className="form-floating mb-3" id="t">
-                              <Hint options={(hintDataTo[moveFrom]) ? (hintDataTo[moveFrom]) : ([])} allowTabFill allowEnterFill>
+                              <Hint options={(hintDataTo[moveFrom.charAt(0).toUpperCase() + moveFrom.slice(1)]) ? (hintDataTo[moveFrom.charAt(0).toUpperCase() + moveFrom.slice(1)]) : ([])} allowTabFill allowEnterFill>
                                    <input 
                                         type="text" 
                                         id="to" 
@@ -141,7 +141,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                     </div>
                     <div className="input-grou" >
                          <div className="form-floating mb-3 test12">
-                              <Hint options={(hintDataTo[moveFrom]) ? (hintDataTo[moveFrom]) : ([])} allowTabFill allowEnterFill>
+                              <Hint options={(hintDataTo[moveFrom.charAt(0).toUpperCase() + moveFrom.slice(1)]) ? (hintDataTo[moveFrom.charAt(0).toUpperCase() + moveFrom.slice(1)]) : ([])} allowTabFill allowEnterFill>
                                    <input 
                                         type="text" 
                                         id="to1" 

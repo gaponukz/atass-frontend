@@ -5,6 +5,10 @@ import { getRouteInfoDetail, getUserIdRoute, idleStatus } from "../features/getR
 import { postPaymnet } from '../features/payment/paymentSlice';
 import { unwrapResult } from "@reduxjs/toolkit";
 
+const weeks = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+const months = ["Січень", "Лютий", "Березень", "Квітень", "Травень","Червень",
+  "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"
+]
 
 const UniqueRouteInfoDetail = () => {
 
@@ -64,7 +68,7 @@ const UniqueRouteInfoDetail = () => {
         "amount": route_info.price,
         "routeId": route_info.root_route_id,
         "passenger": {
-          "id": "",
+          "id": user.id,
           "gmail": user.gmail,
           "fullName": user.fullName,
           "phoneNumber": user.phone,
@@ -73,7 +77,7 @@ const UniqueRouteInfoDetail = () => {
         }
       }
       console.log(obj);
-      dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id,
+      dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id, id: user.id,
         gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
       })).then(() => {
         navigate("/success-payment");
@@ -89,7 +93,7 @@ const UniqueRouteInfoDetail = () => {
   return (
     <div>
       <div className="container yuiop">
-        <h2 className="data">Чт,13 липня</h2>
+        <h2 className="data">{weeks[move_from_pre.getDay()]},{move_from_pre.getDate()} {months[move_from_pre.getMonth()].toLocaleLowerCase()}</h2>
 
         <div className="testssss">
           <ul className="events">
