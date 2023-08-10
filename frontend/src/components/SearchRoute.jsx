@@ -18,6 +18,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
 
      // ui state
      const [hintDataTo, setHintDataTo] = useState({});
+     const [hintDataFrom, setHintDataFrom] = useState([]);
 
      const [ moveFrom, setMoveFrom ] = useState(defaultMoveFrom);
      const [ moveTo, setMoveTo ] = useState(defaultMoveTo);
@@ -31,18 +32,18 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
           dispatch(getRouteHint())
                .then(unwrapResult)
                .then((res) => {
-                    //console.log(res);
+                    console.log(res);
+                    console.log(Object.keys(res));
                     setHintDataTo(res)
+                    setHintDataFrom(Object.keys(res))
                })
                .catch((err) => {
-                    console.log(err);
-                    if (err.message === "Network Error") {
-                         navigate("/505")
-                    }
+                    // console.log(err);
+                    // if (err.message === "Network Error") {
+                    //      navigate("/505")
+                    // }
                })
      }, [])
-
-     const hintData = ['київ', 'львів', 'варшава']
 
      const handleButtonClickSent = () => {
           let datePrepared = date.split("-").reverse().join(".");
@@ -66,14 +67,14 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
           }
  
      }
-     //console.log(hintDataTo[moveFrom]);
+     //console.log(Object.keys(hintDataTo));
      return (
           <>
           <ToastContainer />
                <div className="big12">
                     <div className="input-group" id="sadasd">
                          <div className="form-floating mb-3" id="fr">
-                              <Hint options={hintData} allowTabFill allowEnterFill>
+                              <Hint options={hintDataFrom} allowTabFill allowEnterFill>
                                    <input 
                                         type="text" 
                                         id="from" 
@@ -131,7 +132,7 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
                <div className="small56 ">
                     <div className="input-grou" >
                          <div className="form-floating mb-3 test12" id="he">
-                              <Hint options={hintData} allowTabFill allowEnterFill>
+                              <Hint options={hintDataFrom} allowTabFill allowEnterFill>
                                    <input 
                                         type="text" 
                                         id="from1" 

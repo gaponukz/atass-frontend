@@ -24,6 +24,9 @@ const UserRoutes = () => {
                     //console.log("t1");
                     if (err.message === "Request failed with status code 401")
                          navigate("/sign-in")
+                    else if (err.message === "Network Error") {
+                         navigate("/505")
+                    }
                })
      }, [])
      //console.log(userCheck);

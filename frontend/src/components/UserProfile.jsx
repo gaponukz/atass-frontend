@@ -31,7 +31,6 @@ const UserProfile = () => {
           navigate("/sign-in");
         }
         else if (err.message === "Network Error") {
-          console.log("tytytytytyt");
           navigate("/505")
         }
       })
