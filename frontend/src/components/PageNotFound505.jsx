@@ -1,4 +1,4 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const PageNotFound505 = () => {
   return (
@@ -6,7 +6,7 @@ const PageNotFound505 = () => {
     <div class="container for_404">
     <h1 class="error-code">505</h1>
     <p class="error-message">Страница не найдена</p>
-    <p class="home-link"><a href="/">Вернуться на главную страницу</a></p>
+    <p class="home-link"><NavLink to="/">Вернуться на главную страницу</NavLink></p>
   </div>
   </body>
   )

@@ -1,14 +1,28 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import icons8_globe_96 from "./static/images/icons8-globe-96.png"
 import check from "./static/images/checked.png"
+import { useSelector } from 'react-redux'
 const SuccessPaymnet = () => {
+
+  const navigate = useNavigate()
+
+  const user_code = useSelector((state) => state.payment.user_code)
+  console.log(user_code);
+
+  useEffect(() => {
+    if (user_code === "") {
+      navigate("/")
+    } 
+  }, [])
+
   return (
     <div>
      <div className="success-container">
         <img src={check} alt="Успешно"/>
         <h1>Платіж прошла успішно!</h1>
         <p>Дякую за оплату. Чек автоматично буде надіслано на пошту</p>
+        <p>{user_code}</p>
         <NavLink to="/">Вернутися на головну</NavLink>
     </div>
     </div>

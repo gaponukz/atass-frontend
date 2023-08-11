@@ -82,7 +82,8 @@ const UniqueRouteInfoDetail = () => {
       console.log(obj);
       dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id, id: user.id,
         gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
-      })).then(() => {
+      })).then((res) => {
+        console.log(res);
         navigate("/success-payment");
       })
       dispatch(idleStatus())

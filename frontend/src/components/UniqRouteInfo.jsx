@@ -42,9 +42,7 @@ const UniqRouteInfo = () => {
           </div>
       {(loading) ? (
         <>
-          <Circles 
-            color="#00FFFF"
-          />
+          <div className="loader-container"><Circles height={120} width={120} color="#00FFFF"/></div>
         </>
       ) : (
         <>

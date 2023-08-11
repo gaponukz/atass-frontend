@@ -54,9 +54,7 @@ const UserProfile = () => {
     <>
       {(loading) ? (
       <>
-        <Circles 
-          color="#00FFFF"
-        />
+        <div className="loader-container"><Circles height={120} width={120} color="#00FFFF"/></div>
       </>) : (
         <>
           <div className="container yyyy">

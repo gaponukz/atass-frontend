@@ -62,7 +62,7 @@ function App() {
         <Route path="/passenger-payment-nf" element={<ProccessPaymentNF />}/>
         <Route path="*" element={<PageNotFound />} />
         <Route path="/505" element={<PageNotFound505 />} />
-        <Route path="/loading"   element={<div className="loader-container"><Circles height={120} width={120} color="#00FFFF"/></div>}/>
+        <Route path="/loading" element={<div className="loader-container"><Circles height={120} width={120} color="#00FFFF"/></div>}/>
       </Routes>
     </div>
   );

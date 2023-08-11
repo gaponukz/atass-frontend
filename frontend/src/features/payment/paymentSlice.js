@@ -6,9 +6,6 @@ const BASE_URL_USER = "http://localhost:8080";
 const BASE_URL_PAY = "http://localhost:9090";
 
 export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, routeId, passenger, id, gmail, fullName, phoneNumber, movingFromId, movingTowardsId }) => {
-
-     console.log();
-
      const response = await axios.post(`${BASE_URL_PAY}/processPayment`, {
           "amount": amount,
           "routeId": routeId,
@@ -22,7 +19,7 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
           }
      }
      )
-     console.log(response.data);
+     // console.log(response.data);
  
      return response.data
  })
@@ -30,7 +27,7 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
  const paymentSlice = createSlice({
      name: "payment",
      initialState: {
-          
+          user_code: ""
      },
      reducers: {},
      extraReducers: (builder) => {
@@ -41,6 +38,7 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
           .addCase(postPaymnet.fulfilled, (state, action) => {
                console.log("p+");
                console.log(action.payload);
+               state.user_code = action.payload;
                
           })
           .addCase(postPaymnet.rejected, (state, action) => {
