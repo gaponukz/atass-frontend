@@ -43,6 +43,9 @@ const UniqueRouteInfoDetail = () => {
         if (err.message === "Request failed with status code 404") {
           navigate("/404")
         }
+        if (err.message === "Network Error") {
+          navigate("/505")
+        }
       })
 
   }, [])
@@ -93,7 +96,7 @@ const UniqueRouteInfoDetail = () => {
   return (
     <div>
       <div className="container yuiop">
-        <h2 className="data">{weeks[move_from_pre.getDay()]},{move_from_pre.getDate()} {months[move_from_pre.getMonth()].toLocaleLowerCase()}</h2>
+        <h2 className="data">{weeks[move_from_pre.getDay()]},{move_from_pre.getDate()} {months[move_from_pre.getMonth()]?.toLocaleLowerCase()}</h2>
 
         <div className="testssss">
           <ul className="events">
