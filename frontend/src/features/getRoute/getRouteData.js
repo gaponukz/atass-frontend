@@ -15,7 +15,6 @@ export const getUserIdRoute = createAsyncThunk("data/getUserIdRoute", async () =
  })
 
 export const getRouteInfo = createAsyncThunk("route/getRouteInfo", async ({ fromCity, toCity, date }) => {
-     console.log("here");
      // console.log(fromCity, toCity, date);
      console.log(`${BASE_URL}/available?move_from_city=${fromCity}&move_to_city=${toCity}&date=${date}`);
 
@@ -69,7 +68,8 @@ const routeSlice = createSlice({
           err: "",
           info: {},
           succedded: false
-         }
+         },
+         loading: false
      },
      reducers: {
           idleStatus: (state) => {
@@ -80,15 +80,21 @@ const routeSlice = createSlice({
      extraReducers: (builder) => {
           builder
                .addCase(getRouteInfo.pending, (state) => {
-                    console.log("n?");
+                    console.log("r?");
+
+                    state.loading = true;
                })
                .addCase(getRouteInfo.fulfilled, (state, action) => {
-                    console.log("n+");
+                    console.log("r+");
                     //console.log(action.payload);
                     state.route_family = [...action.payload];
+
+                    state.loading = false;
                })
                .addCase(getRouteInfo.rejected, (state, action) => {
-                    console.log("n-");
+                    console.log("r-");
+
+                    state.loading = false;
                })
                .addCase(getRouteInfoDetail.pending, (state) => {
                     console.log("n1?");

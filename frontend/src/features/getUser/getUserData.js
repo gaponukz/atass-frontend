@@ -76,11 +76,11 @@ const dataSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getUserId.pending, (state) => {
-                console.log("?");
+                //console.log("?");
                 state.loading = true;
             })
             .addCase(getUserId.fulfilled, (state, action) => {
-                console.log("+", action.payload);
+                //console.log("+", action.payload);
                 state.data = { ...action.payload };
                 state.error = "";
                 state.logout = false;
@@ -88,7 +88,7 @@ const dataSlice = createSlice({
                 state.loading = false;
             })
             .addCase(getUserId.rejected, (state, action) => {
-                console.log("-", action.error.message);
+                //console.log("-", action.error.message);
                 state.error = action.error.message;
 
                 state.loading = false;
@@ -128,19 +128,23 @@ const dataSlice = createSlice({
                 }
             })
             .addCase(getUserRoutes.pending, (state) => {
-                console.log("?");
+                //console.log("g?");
+                state.loading = true;
             })
             .addCase(getUserRoutes.fulfilled, (state, action) => {
-                console.log("+", action.payload);
+                //console.log("g+", action.payload);
                 if (action.payload === null) {
                     state.userNotHaveRoutes = true;
                 }
                 else {
                     state.userRoutes = [...action.payload]
                 }
+
+                state.loading = false;
             })
             .addCase(getUserRoutes.rejected, (state, action) => {
-                console.log("-", action.error.message);
+                //console.log("g-", action.error.message);
+                state.loading = false;
             })
     }
 })

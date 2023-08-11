@@ -18,6 +18,7 @@ import UserRoutes from "./components/UserRoutes";
 import SuccessPaymnet from "./components/SuccessPaymnet";
 import PageNotFound505 from "./components/PageNotFound505";
 import AboutUs from "./components/AboutUs";
+import { Circles } from "react-loader-spinner";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
@@ -61,6 +62,7 @@ function App() {
         <Route path="/passenger-payment-nf" element={<ProccessPaymentNF />}/>
         <Route path="*" element={<PageNotFound />} />
         <Route path="/505" element={<PageNotFound505 />} />
+        <Route path="/loading" element={<><Circles color="#00FFFF"/></>}/>
       </Routes>
     </div>
   );

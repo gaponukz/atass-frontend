@@ -49,7 +49,7 @@ const UserProfile = () => {
       navigate("/sign-in");
     }
   }, [logout])
-  console.log(loading);
+  //console.log(loading);
   return (
     <>
       {(loading) ? (
@@ -81,26 +81,6 @@ const UserProfile = () => {
             </button></div>
         </>
       )}
-      {/* <div className="container yyyy">
-      </div>
-      <div className="nadpis">
-        <p>{userInfo.fullName}</p>
-        <img src={avatar} />
-      </div>
-      <div className="test">
-        <NavLink className="xxxxx" to="/edit-profile">Редагувати</NavLink>
-      </div>
-      <div className="red">
-        <h5 className="sss">{userInfo.gmail}</h5>
-        <h5 className="sss">{userInfo.phone}</h5>
-      </div>
-      <div className="butttt">
-        <button
-          className="btn ty"
-          style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
-          onClick={handleButtonCLick}>
-          <span>Log out</span>
-        </button></div> */}
     </>
   )
 }

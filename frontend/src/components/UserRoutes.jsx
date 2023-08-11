@@ -4,11 +4,14 @@ import { unwrapResult } from "@reduxjs/toolkit";
 import { getUserRoutes } from "../features/getUser/getUserData";
 import { useNavigate } from "react-router-dom";
 import CardRoute from "./CardRoute";
+import { Circles } from "react-loader-spinner";
 
 const UserRoutes = () => {
 
      const userCheck = useSelector((state) => state.getUser.userNotHaveRoutes)
      const userRoutes = useSelector((state) => state.getUser.userRoutes)
+     const loading = useSelector((state) => state.getUser.loading)
+
 
      // helper
      const dispatch = useDispatch();
@@ -29,24 +32,34 @@ const UserRoutes = () => {
                     }
                })
      }, [])
-     //console.log(userCheck);
+     //console.log(loading);
      return (
-          <div>
-               {(userCheck) ? (<p>у вас ще немає марштрутів</p>) : (<>
-                    <div class="container qty">
-                         <h1 class="first_name">Ваші поїздки</h1>
-                         <div class="rov">
-                              {userRoutes.map(t => (
-                                   <CardRoute 
-                                        route_id={t.rootRouteId}
-                                        move_from={t.movingFromId}
-                                        move_to={t.movingTowardsId}     
-                                   />
-                              ))}
+          <>
+               {(loading) ? (
+                    <>
+                         <Circles 
+                              color="#00FFFF"
+                         />
+                    </>) : (
+                    <>
+                         <div>
+                              {(userCheck) ? (<p>у вас ще немає марштрутів</p>) : (<>
+                                   <div className="container qty">
+                                        <h1 className="first_name">Ваші поїздки</h1>
+                                        <div className="rov">
+                                             {userRoutes.map(t => (
+                                                  <CardRoute
+                                                       route_id={t.rootRouteId}
+                                                       move_from={t.movingFromId}
+                                                       move_to={t.movingTowardsId}
+                                                  />
+                                             ))}
+                                        </div>
+                                   </div>
+                              </>)}
                          </div>
-                    </div>
-               </>)}
-          </div>
+                    </>)}
+          </>
      )
 }
 
