@@ -77,16 +77,21 @@ const dataSlice = createSlice({
         builder
             .addCase(getUserId.pending, (state) => {
                 console.log("?");
+                state.loading = true;
             })
             .addCase(getUserId.fulfilled, (state, action) => {
                 console.log("+", action.payload);
                 state.data = { ...action.payload };
                 state.error = "";
                 state.logout = false;
+
+                state.loading = false;
             })
             .addCase(getUserId.rejected, (state, action) => {
                 console.log("-", action.error.message);
                 state.error = action.error.message;
+
+                state.loading = false;
             })
             .addCase(logUserOut.pending, (state) => {
                 console.log("?");

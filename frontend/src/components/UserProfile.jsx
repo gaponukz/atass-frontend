@@ -9,10 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 import avatar from "./static/images/icons8-avatar-96.png"
 
 import { useNavigate } from "react-router-dom";
+import { Circles } from "react-loader-spinner";
 
 const UserProfile = () => {
   const userInfo = useSelector((state) => state.getUser.data);
-  const err = useSelector((state) => state.getUser.error)
+  const loading = useSelector((state) => state.getUser.loading)
   const logout = useSelector((state) => state.getUser.logout)
 
   const dispatch = useDispatch();
@@ -48,10 +49,39 @@ const UserProfile = () => {
       navigate("/sign-in");
     }
   }, [logout])
-
+  console.log(loading);
   return (
     <>
-      <div className="container yyyy">
+      {(loading) ? (
+      <>
+        <Circles 
+          color="#00FFFF"
+        />
+      </>) : (
+        <>
+          <div className="container yyyy">
+          </div>
+          <div className="nadpis">
+            <p>{userInfo.fullName}</p>
+            <img src={avatar} />
+          </div>
+          <div className="test">
+            <NavLink className="xxxxx" to="/edit-profile">Редагувати</NavLink>
+          </div>
+          <div className="red">
+            <h5 className="sss">{userInfo.gmail}</h5>
+            <h5 className="sss">{userInfo.phone}</h5>
+          </div>
+          <div className="butttt">
+            <button
+              className="btn ty"
+              style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
+              onClick={handleButtonCLick}>
+              <span>Log out</span>
+            </button></div>
+        </>
+      )}
+      {/* <div className="container yyyy">
       </div>
       <div className="nadpis">
         <p>{userInfo.fullName}</p>
@@ -70,7 +100,7 @@ const UserProfile = () => {
           style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
           onClick={handleButtonCLick}>
           <span>Log out</span>
-        </button></div>
+        </button></div> */}
     </>
   )
 }
