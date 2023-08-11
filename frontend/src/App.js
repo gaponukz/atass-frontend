@@ -17,6 +17,7 @@ import ProccessPaymentNF from "./components/ProccessPaymentNF";
 import UserRoutes from "./components/UserRoutes";
 import SuccessPaymnet from "./components/SuccessPaymnet";
 import PageNotFound505 from "./components/PageNotFound505";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
@@ -45,7 +46,7 @@ function App() {
       <Routes>
         {/* site */}
         <Route path="/" element={<MainSitePage />}/>
-        <Route path="/about-us" element={<>About Us</>}/>
+        <Route path="/about-us" element={<AboutUs />}/>
         <Route path="/route" element={<UniqRouteInfo />}/>
         <Route path="/route-info-detail" element={<UniqueRouteInfoDetail />}/>
         

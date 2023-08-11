@@ -17,6 +17,7 @@ import { fetchPosts } from "../features/post/PostSlice";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 const schema = yup.object().shape({
     email: yup.string().email().required(),
@@ -41,6 +42,13 @@ const SignIn = () => {
     const onSubmitHandler = (data) => {
         console.log({ data });
         dispatch(fetchPosts({ url: "signin", gmail: data.email, password: data.password, rememberHim: rememberHim }))
+            .then(unwrapResult)
+            .catch((err) => {
+                // console.log(err);
+                if (err.message === "Network Error") {
+                    navigate("/505")
+                }
+            })
     }
 
     useEffect(() => {
@@ -91,7 +99,6 @@ const SignIn = () => {
                         aria-describedby="button-addon2"
                         {...register("password")}
                     />
-                    
                     <button
                         type="button"
                         className="btn ss"
@@ -114,28 +121,26 @@ const SignIn = () => {
 
                     }}
                 />
-                
                 <div className="silll">
                     <NavLink to="/reset-password" style={{ display: 'block' }} >Не пам'ятаю пароль</NavLink>
                     <NavLink to="/sign-up " style={{ display: 'block', marginTop: '2%'}}>Зареєструватись</NavLink>
                 </div>
-            
             </div>
-
             <div className="kn">
                 <button
                     type="submit"
                     className="btn ss"
                     style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
-                    
                     disabled={(postStatus === "loading") ? true : false}
                 >
                     {(postStatus === "loading") ? (
+                        
                         <Circles
                             color="#00FFFF"
                             height={25}
                             width={60}
                             className="m-5"
+                            
                         />
                     ) : (
                         <span

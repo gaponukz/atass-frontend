@@ -32,8 +32,8 @@ const SearchRoute = ({ flagNav, defaultMoveFrom, defaultMoveTo, defaultDate }) =
           dispatch(getRouteHint())
                .then(unwrapResult)
                .then((res) => {
-                    console.log(res);
-                    console.log(Object.keys(res));
+                    //console.log(res);
+                    //console.log(Object.keys(res));
                     setHintDataTo(res)
                     setHintDataFrom(Object.keys(res))
                })

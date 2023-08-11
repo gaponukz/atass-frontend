@@ -22,16 +22,16 @@ const UserProfile = () => {
     dispatch(getUserId())
       .then(unwrapResult)
       .then((res) => {
-        // console.log(res);
+        //console.log(res);
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
         if (err.message === "Request failed with status code 401") {
           // console.log("here");
           navigate("/sign-in");
         }
-        else if (err.message === "Network Error") {
-          navigate("/505")
+        else if (err.message === "Network Error" || err.message === "Request failed with status code 500") {
+          navigate("/sign-in")
         }
       })
   }, [])
@@ -40,16 +40,9 @@ const UserProfile = () => {
     dispatch(logUserOut())
   }
 
-  // useEffect(() => {
-  //   if (err === "Request failed with status code 401") {
-  //     console.log("here");
-  //     navigate("/sign-in");
-  //   }
-  // }, [err])
-
   useEffect(() => {
     if (logout) {
-      console.log("here1");
+      //console.log("here1");
       dispatch(chageFlagStatusFalse())
       dispatch(changeAuthorized(false))
       navigate("/sign-in");
