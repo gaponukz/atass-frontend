@@ -31,7 +31,7 @@ const CardRoute = ({ route_id, move_from , move_to }) => {
           <div>
                <div class="card new_card" >
                     <div class="card-body">
-                         <p class="glav_data">{weeks[parsed_time_from_pre.getDay()]},{parsed_time_from_pre.getDate()} {months[parsed_time_from_pre.getMonth()].toLocaleLowerCase()},{parsed_time_from}</p>
+                         <p class="glav_data">{weeks[parsed_time_from_pre.getDay()]},{parsed_time_from_pre.getDate()} {months[parsed_time_from_pre.getMonth()]?.toLocaleLowerCase()},{parsed_time_from}</p>
                          <ul class="event ">
                               <li>
                                    <time >{parsed_time_from}</time>
