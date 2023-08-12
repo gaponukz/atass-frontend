@@ -50,7 +50,12 @@ const HeaderNavBar = () => {
                            <li className="onas"><a href="#" >О нас</a></li>
                            <div className="erty">
                            <img src={icons8_bus_96} className="person" style={{ float: "left" }} />
-                           <li className="msssss"><NavLink to="user-routes">Мої поїздки</NavLink></li></div>
+                           <li className="msssss"
+                              onClick={() => {
+                                 navigate("/user-routes")
+                                 navigate(0)
+                              }}
+                           >Мої поїздки</li></div>
 
                         </div></ul>
                      <div id="selec">
@@ -78,8 +83,13 @@ const HeaderNavBar = () => {
                   <option value="en">English</option>
                   <option value="pl">Polski</option>
                </select>
-               <li ><NavLink to="/about-us">Про нас</NavLink></li>
-               <li><NavLink to="/user-routes">Мої поїздки</NavLink></li>
+               <li><NavLink to="/about-us">Про нас</NavLink></li>
+               <li
+               onClick={() => {
+                  navigate("/user-routes")
+                  navigate(0)
+               }} 
+                  >Мої поїздки</li>
                <li><NavLink to="/user-profile">Особистий кабінет</NavLink></li>
             </ul>
          </nav>

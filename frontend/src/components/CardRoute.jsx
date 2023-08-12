@@ -16,6 +16,7 @@ const CardRoute = ({ route_id, move_from , move_to }) => {
           dispatch(getUserRoute({routeid: route_id, fromId: move_from, toId: move_to}))
                .then(unwrapResult)
                .then((res) => {
+                    console.log(res);
                     setUserRes(res)  
                })
      }, [])

@@ -21,7 +21,7 @@ const UserRoutes = () => {
           dispatch(getUserRoutes())
                .then(unwrapResult)
                .then((res) => {
-                    //console.log(res);
+                    // console.log(res);
                })
                .catch((err) => {
                     //console.log("t1");
