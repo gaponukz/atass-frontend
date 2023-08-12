@@ -75,7 +75,7 @@ const UserProfile = () => {
               className="btn ty"
               style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold" }}
               onClick={handleButtonCLick}>
-              <span>Log out</span>
+              <span>Вийти</span>
             </button></div>
         </>
       )}

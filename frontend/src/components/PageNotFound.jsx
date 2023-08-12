@@ -7,8 +7,11 @@ const PageNotFound = () => {
     <div>
       <div className="container for_404">
         <h1 className="error-code">404</h1>
-        <p className="error-message">Страница не найдена</p>
-        <p className="home-link"><NavLink to="/">Вернуться на главную страницу</NavLink></p>
+        <p className="error-message">
+          Виглядає, ніби ви вибралися на зупинку, якої ніколи не існувало на нашому автобусному маршруті. <br />
+          Можливо, це виглядає як приголомшливий пригодницький маршрут, але на жаль, наші автобуси не ризикують такими вибухами драйву.
+        </p>
+        <p className="home-link"><NavLink to="/">Повернутися на головну!</NavLink></p>
       </div>
     </div>
     </body>

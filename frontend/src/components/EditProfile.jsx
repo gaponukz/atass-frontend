@@ -13,7 +13,7 @@ import axios from "axios";
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 const schema = yup.object().shape({
-  phoneNumber: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+  phoneNumber: yup.string().matches(phoneRegExp, 'Телефон введено не вірно 😕'),
   name: yup.string().required(),
   check: yup.boolean().oneOf([true, false], 'You must agree to the terms')
 });
@@ -72,8 +72,8 @@ const EditProfile = () => {
       <form onSubmit={handleSubmit(onSubmitHandler)}>
         <div className="container rety">
           <div className="form-group xpo">
-            <label htmlFor="name" className="nad">Настройки</label>
-            <label htmlFor="name">First name:</label>
+            <label htmlFor="name" className="nad">Налаштування</label>
+            <label htmlFor="name">Ім`я та фамілія:</label>
             <div className="input-group rey mb-3 ">
               <input
                 type="text"
@@ -85,7 +85,7 @@ const EditProfile = () => {
             </div>
           </div>
           <div className="form-group xpo">
-            <label htmlFor="email">Phone:</label>
+            <label htmlFor="email">Телефон:</label>
             <div className="input-group rey mb-3 ">
               <input
                 type="text"
@@ -97,7 +97,7 @@ const EditProfile = () => {
             </div>
           </div>
           <div className="form-group xpo rek">
-            <label htmlFor="email" className="sui">Разрешить рассылку:</label>
+            <label htmlFor="email" className="sui">Дозволити розсилку: </label>
             <div className="input-group rey mb-3 ni ">
               <input
                 className="apple-switch"
@@ -111,7 +111,7 @@ const EditProfile = () => {
               <button
                 className="btn oi"
                 type="submit"
-              >Отправить</button>
+              >Відправити</button>
             </div>
             <div className="but2">
               <button

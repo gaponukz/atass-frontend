@@ -70,7 +70,7 @@ const ResetPassword = () => {
     <>
       <ToastContainer />
       <div className="centered-text">
-        <h1>Укажіть свою ел. адресу. Ми надішлемо вам посилання, за яким можна створити новий пароль.</h1>
+        <h1>Укажіть свою ел. адресу. Ми надішлемо вам код, за яким можна відновити пароль.</h1>
       </div>
 
       <form onSubmit={handleSubmit(onSubmitHandler)}>
