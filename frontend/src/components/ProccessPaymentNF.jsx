@@ -96,7 +96,7 @@ const ProccessPaymentNF = () => {
 
                          </div>
                          <div className="form-group xpo">
-                              <label for="email">Email:</label>
+                              <label for="email">Пошта:</label>
                               <div className="input-group rey mb-3 ">
                                    <input
                                         type="text"
