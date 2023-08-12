@@ -84,12 +84,13 @@ const HeaderNavBar = () => {
                   <option value="pl">Polski</option>
                </select>
                <li><NavLink to="/about-us">Про нас</NavLink></li>
-               <li
-               onClick={() => {
-                  navigate("/user-routes")
-                  navigate(0)
-               }} 
-                  >Мої поїздки</li>
+               <li className="mts"
+            
+               
+                  ><NavLink onClick={() => {
+                     navigate("/user-routes")
+                     navigate(0)
+                  }} >Мої поїздки </NavLink></li>
                <li><NavLink to="/user-profile">Особистий кабінет</NavLink></li>
             </ul>
          </nav>

@@ -79,6 +79,8 @@
     margin-left: -10%;
 }
 @media (max-width: 800px){
+    
+
     .first_name{
         margin-right: 0;
         margin-left: 3%;
@@ -93,14 +95,15 @@
         height: 200px;
     }
     .event{
-        margin-top: 20%;
+        width: 100%;
+        margin-top: 25%;
         margin-left: -21%;
     }
     .rov{
-     position: absolute;
-     right: 4%;
-     width: 100%;
-    }
+        position: absolute;
+        right: 4%;
+        width: 100%;
+       }
 }
 
 @media (min-width: 200px) and (max-width: 369px){
@@ -112,12 +115,14 @@
 
   @media (min-width: 700px) and (max-width: 800px){
     .event{
+        width: 100%;
         margin-top: 15%;
         margin-left: -11%;
     }
   }
   @media (min-width: 800px) and (max-width: 1200px){
     .event{
+        width: 100%;
         margin-top: 15%;
     }
   }
