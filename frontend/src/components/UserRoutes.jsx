@@ -50,7 +50,7 @@ const UserRoutes = () => {
                     </>) : (
                     <>
                          <div>
-                              {(userCheck) ? (<p>У вас ще немає марштрутів</p>) : (<>
+                              {(userCheck) ? (<p className="nema_poiz">У вас ще немає марштрутів</p>) : (<>
                                    <div className="container qty">
                                         <h1 className="first_name">Ваші поїздки</h1>
                                         <div className="rov">
