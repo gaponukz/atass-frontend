@@ -18,15 +18,17 @@ import { fetchPosts } from "../features/post/PostSlice";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { unwrapResult } from "@reduxjs/toolkit";
+import PageNotFound505 from "./PageNotFound505";
 
 const schema = yup.object().shape({
     email: yup.string().email().required(),
     password: yup.string().min(4).max(32).required(),
 });
 
-const SignIn = () => {
+const SignIn = ({ authorized, setAuthorized }) => {
     const postStatus = useSelector((state) => state.post.status);
     const flag = useSelector((state) => state.post.fetchDataFlag);
+    const [checkError, setCheckError] = useState(false);
     // const finalFlagSuccess = useSelector((state) => state.reset.finalFlagSuccess)
 
     const navigate = useNavigate();
@@ -44,22 +46,32 @@ const SignIn = () => {
         dispatch(fetchPosts({ url: "signin", gmail: data.email, password: data.password, rememberHim: rememberHim }))
             .then(unwrapResult)
             .catch((err) => {
-                // console.log(err);
                 if (err.message === "Network Error") {
-                    navigate("/505")
+                    // navigate("/505")
+                    setCheckError(true)
                 }
             })
     }
+    
 
     useEffect(() => {
         if (flag) {
             console.log("test");
             dispatch(changeLogout())
             dispatch(changeAuthorized(true))
+            setAuthorized(true)
             navigate("/user-profile");
             reset()
         }
     }, [flag])
+
+    if (checkError) {
+        return (
+             <>
+                <PageNotFound505 />
+             </>
+        )
+   }
 
     return (
         <>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRouteInfo } from "../features/getRoute/getRouteData";
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -8,8 +8,10 @@ import SearchRoute from "./SearchRoute";
 import CardInfo from "./CardInfo";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { Circles } from "react-loader-spinner";
+import PageNotFound505 from "./PageNotFound505";
 
 const UniqRouteInfo = () => {
+  const [checkError, setCheckError] = useState(false);
 
   // helper
   const search = useLocation().search
@@ -30,10 +32,19 @@ const UniqRouteInfo = () => {
       .then(unwrapResult)
       .catch((err) => {
         if (err.message === "Network Error") {
-          navigate("/505")
+          // navigate("/505")
+          setCheckError(true);
         }
       })
   }, [])
+
+  if (checkError) {
+    return (
+         <>
+            <PageNotFound505 />
+         </>
+    )
+  }
 
   return (
     <>

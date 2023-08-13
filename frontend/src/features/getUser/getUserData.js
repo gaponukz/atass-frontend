@@ -47,6 +47,12 @@ export const getUserRoutes = createAsyncThunk("data/getUserRoutes", async () => 
     return response.data
 })
 
+export const getUserAuthorized =  createAsyncThunk("data/getUserAuthorized", async () => {
+    const response = await axios.get(`${BASE_URL}/getUserInfo`)
+    // console.log(response.data);
+    return response.data
+})
+
 const dataSlice = createSlice({
     name: 'data',
     initialState: {
@@ -84,6 +90,7 @@ const dataSlice = createSlice({
                 state.data = { ...action.payload };
                 state.error = "";
                 state.logout = false;
+                localStorage.setItem("authorized", true);
 
                 state.loading = false;
             })
@@ -145,6 +152,15 @@ const dataSlice = createSlice({
             .addCase(getUserRoutes.rejected, (state, action) => {
                 //console.log("g-", action.error.message);
                 state.loading = false;
+            })
+            .addCase(getUserAuthorized.pending, (state) => {
+                console.log("u?");
+            })
+            .addCase(getUserAuthorized.fulfilled, (state, action) => {
+                console.log("u+");
+            })
+            .addCase(getUserAuthorized.rejected, (state, action) => {
+                console.log("u-");
             })
     }
 })

@@ -9,13 +9,27 @@ import worlwide from "./static/images/worldwide.png";
 import chat from "./static/images/chat.png"
 
 import { NavLink, useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { useEffect } from "react"
+import { getUserAuthorized } from "../features/getUser/getUserData"
+import { unwrapResult } from "@reduxjs/toolkit"
 
 
-const HeaderNavBar = () => {
-   const authorized = useSelector((state) => state.getUser.authorized);
-   //console.log(authorized);
+const HeaderNavBar = ({ authorized, setAuthorized }) => {
+
    const navigate = useNavigate();
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+      dispatch(getUserAuthorized())
+         .then(unwrapResult)
+         .then((res) => {
+            setAuthorized(true)
+         })
+         .catch((err) => {
+            setAuthorized(false)
+         })
+   }, [])
 
    return (
       <>
@@ -47,7 +61,7 @@ const HeaderNavBar = () => {
                         >{(authorized) ? (<p>Особистий кабінет</p>) : (<p>Увійти</p>)}</a></li>
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
-                           <li className="onas"><a href="#" >О нас</a></li>
+                           <li className="onas"><NavLink to="/about-us" >О нас</NavLink></li>
                            <div className="erty">
                            <img src={icons8_bus_96} className="person" style={{ float: "left" }} />
                            <li className="msssss"

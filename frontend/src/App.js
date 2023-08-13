@@ -9,7 +9,7 @@ import SignUp from "./components/SignUp";
 import UserProfile from "./components/UserProfile";
 
 import {  Routes, Route, Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { refreshUser } from "./features/getUser/getUserData";
 import UniqRouteInfo from "./components/UniqRouteInfo";
 import UniqueRouteInfoDetail from "./components/UniqueRouteInfoDetail";
@@ -22,7 +22,6 @@ import { Circles } from "react-loader-spinner";
 
 function App() {
   const flag = useSelector((state) => state.getUser.flag);
-  const authorized = useSelector((state) => state.getUser.authorized)
 
   const dispatch = useDispatch();
 
@@ -39,11 +38,11 @@ function App() {
   //   };
 
   // }, [flag, authorized])
-  
+  const [authorized, setAuthorized] = useState(false);
   
   return (
     <div className="">
-      <HeaderNavBar />
+      <HeaderNavBar authorized={authorized} setAuthorized={setAuthorized}/>
       <Routes>
         {/* site */}
         <Route path="/" element={<MainSitePage />}/>
@@ -52,9 +51,9 @@ function App() {
         <Route path="/route-info-detail" element={<UniqueRouteInfoDetail />}/>
         
         {/* user features */}
-        <Route path="/sign-in" element={<SignIn />}/>
+        <Route path="/sign-in" element={<SignIn authorized={authorized} setAuthorized={setAuthorized} />}/>
         <Route path="/sign-up" element={<SignUp />}/>
-        <Route path="/user-profile" element={<UserProfile />}/>
+        <Route path="/user-profile" element={<UserProfile authorized={authorized} setAuthorized={setAuthorized} />}/>
         <Route path="/reset-password" element={<ResetPassword />}/>
         <Route path="/edit-profile" element={<EditProfile />}/>
         <Route path="/success-payment" element={<SuccessPaymnet />}/>

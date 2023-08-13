@@ -48,11 +48,13 @@ export const postSlice = createSlice({
             console.log("+");
             state.status = "succedded";
             state.fetchDataFlag = true;
+            localStorage.setItem("authorized", true);
           })
           .addCase(fetchPosts.rejected, (state, action) => {
             console.log("-", action.payload);
             state.status = "error";
             toast.error("Неправильні данні!", { autoClose: 1500 })
+            localStorage.setItem("authorized", false);
           });
       },
 })

@@ -11,7 +11,7 @@ import avatar from "./static/images/icons8-avatar-96.png"
 import { useNavigate } from "react-router-dom";
 import { Circles } from "react-loader-spinner";
 
-const UserProfile = () => {
+const UserProfile = ({ authorized, setAuthorized }) => {
   const userInfo = useSelector((state) => state.getUser.data);
   const loading = useSelector((state) => state.getUser.loading)
   const logout = useSelector((state) => state.getUser.logout)
@@ -24,21 +24,25 @@ const UserProfile = () => {
       .then(unwrapResult)
       .then((res) => {
         //console.log(res);
+        setAuthorized(true)
       })
       .catch((err) => {
         console.log(err);
         if (err.message === "Request failed with status code 401") {
           // console.log("here");
           navigate("/sign-in");
+          setAuthorized(false)
         }
         else if (err.message === "Network Error" || err.message === "Request failed with status code 500") {
-          navigate("/sign-in")
+          navigate("/sign-in");
+          setAuthorized(false)
         }
       })
   }, [])
 
   const handleButtonCLick = () => {
     dispatch(logUserOut())
+    
   }
 
   useEffect(() => {
@@ -46,10 +50,12 @@ const UserProfile = () => {
       //console.log("here1");
       dispatch(chageFlagStatusFalse())
       dispatch(changeAuthorized(false))
+      setAuthorized(false)
       navigate("/sign-in");
     }
   }, [logout])
-  //console.log(loading);
+  //const authorized = localStorage.getItem("authorized")
+  //console.log(authorized);
   return (
     <>
       {(loading) ? (
