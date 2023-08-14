@@ -26,7 +26,6 @@
     font-size: 20px;
     font-weight: bold;
     float: left;
-    
 }
 
 
@@ -83,7 +82,7 @@
   
   .event{
     margin-top: 10%;
-    margin-left: -10%;
+    margin-left: -8%;
 }
 @media (max-width: 800px){
     
