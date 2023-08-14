@@ -6,7 +6,7 @@ import { postPaymnet } from '../features/payment/paymentSlice';
 import { unwrapResult } from "@reduxjs/toolkit";
 
 const weeks = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
-const months = ["Січень", "Лютий", "Березень", "Квітень", "Травень","Червень",
+const months = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень",
   "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"
 ]
 
@@ -14,14 +14,14 @@ const UniqueRouteInfoDetail = () => {
 
   const handleButtonClick = () => {
     dispatch(getUserIdRoute())
-    .then(unwrapResult)
+      .then(unwrapResult)
       .catch((err) => {
         console.log(err);
-        if (err.message === "Request failed with status code 401") {
-               console.log("tyt");
-               navigate("/passenger-payment-nf")
-               dispatch(idleStatus())
-          }
+        if (err.message === "Request failed with status code 401" || err.message === "Network Error") {
+          console.log("tyt");
+          navigate("/passenger-payment-nf")
+          dispatch(idleStatus())
+        }
       })
   }
 
@@ -39,7 +39,7 @@ const UniqueRouteInfoDetail = () => {
     dispatch(getRouteInfoDetail({ id: route_id, id_from: move_from, id_to: move_to }))
       .then(unwrapResult)
       .catch((err) => {
-        console.log(err.message);
+        // console.log(err.message);
         if (err.message === "Request failed with status code 404") {
           navigate("/404")
         }
@@ -79,11 +79,12 @@ const UniqueRouteInfoDetail = () => {
           "movingTowardsId": route_info.move_to.id
         }
       }
-      console.log(obj);
-      dispatch(postPaymnet({amount: route_info.price, routeId: route_info.root_route_id, id: user.id,
+      // console.log(obj);
+      dispatch(postPaymnet({
+        amount: route_info.price, routeId: route_info.root_route_id, id: user.id,
         gmail: user.gmail, fullName: user.fullName, phoneNumber: user.phone, movingFromId: route_info.move_from.id, movingTowardsId: route_info.move_to.id
       })).then((res) => {
-        console.log(res);
+        // console.log(res);
         navigate("/success-payment");
       })
       dispatch(idleStatus())
@@ -92,7 +93,7 @@ const UniqueRouteInfoDetail = () => {
 
   const move_from_pre = new Date(route_info?.move_from?.date)
   const move_to_pre = new Date(route_info?.move_to?.date)
-  //console.log(move_from_pre.getHours(), move_from_pre.getMonth(), move_from_pre.getDay(), move_from_pre);
+  console.log(route_info);
 
   return (
     <div>
@@ -101,13 +102,19 @@ const UniqueRouteInfoDetail = () => {
 
         <div className="testssss">
           <ul className="events">
-            <a href="#" className="link">
+            <a href={`${route_info?.move_from?.place?.map_url}`} className="link">
               <div className="test_s">
-                <p className="for_s" ></p></div>
+                <p className="for_s" ></p>
+              </div>
               <li>
                 <time >{move_from_pre.getHours().toString().padStart(2, "0")}:{move_from_pre.getMinutes().toString().padStart(2, "0")}</time>
-                <span style={{ textAlign: "left" }}><strong>{route_info?.move_from?.place?.street}, {route_info?.move_from?.place?.city}, {route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
-            <a href="#" className="link">
+                <span style={{ textAlign: "left" }}><strong>{route_info?.move_from?.place?.street}, {route_info?.move_from?.place?.city}, {route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span>
+              </li>
+            </a>
+            
+            <div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
+
+            <a href={`${route_info?.move_to?.place?.map_url}`} className="link">
               <li>
                 <time >{move_to_pre.getHours().toString().padStart(2, "0")}:{move_to_pre.getMinutes().toString().padStart(2, "0")}</time>
                 <span style={{ textAlign: "left" }}><strong>{route_info?.move_to?.place?.street}, {route_info?.move_to?.place?.city}, {route_info?.move_to?.place?.country}</strong>{route_info?.move_to?.place?.city} </span></li></a>

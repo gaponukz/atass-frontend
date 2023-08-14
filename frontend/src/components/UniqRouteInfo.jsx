@@ -25,7 +25,7 @@ const UniqRouteInfo = () => {
   const move_to_city = searchParams.get("move_to_city")
   const date = searchParams.get("date")
 
-  console.log(loading);
+  // console.log(loading);
 
   useEffect(() => {
     dispatch(getRouteInfo({ fromCity: move_from_city, toCity: move_to_city, date: date }))
