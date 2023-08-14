@@ -15,6 +15,7 @@ import "./tick.css"
 import "./potverzhdenie.css"
 import "./vashiPoizdki.css"
 import "./404.css"
+import "./about_us.css"
 
 import { store } from './app/store';
 import { Provider } from 'react-redux';
