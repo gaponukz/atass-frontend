@@ -1,8 +1,13 @@
 import React from 'react'
+import FooterAboutUs from './FooterAboutUs'
 
 const AboutUs = () => {
   return (
-    <div>AboutUs</div>
+    <div>
+      AboutUs
+      <FooterAboutUs />
+    </div>
+
   )
 }
 
