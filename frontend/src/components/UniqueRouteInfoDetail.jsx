@@ -106,15 +106,15 @@ const UniqueRouteInfoDetail = () => {
                 <p className="for_s" ></p></div>
               <li>
                 <time >{move_from_pre.getHours().toString().padStart(2, "0")}:{move_from_pre.getMinutes().toString().padStart(2, "0")}</time>
-                <span style={{ textAlign: "left" }}><strong>{route_info?.move_from?.place?.street},{route_info?.move_from?.place?.city},{route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
+                <span style={{ textAlign: "left" }}><strong>{route_info?.move_from?.place?.street}, {route_info?.move_from?.place?.city}, {route_info?.move_from?.place?.country}</strong> {route_info?.move_from?.place?.city}</span></li></a><div class="test_s"><a href="#" class="link"><p class="for_s"></p></a></div>
             <a href="#" className="link">
               <li>
                 <time >{move_to_pre.getHours().toString().padStart(2, "0")}:{move_to_pre.getMinutes().toString().padStart(2, "0")}</time>
-                <span style={{ textAlign: "left" }}><strong>{route_info?.move_to?.place?.street},{route_info?.move_to?.place?.city},{route_info?.move_to?.place?.country}</strong>{route_info?.move_to?.place?.city} </span></li></a>
+                <span style={{ textAlign: "left" }}><strong>{route_info?.move_to?.place?.street}, {route_info?.move_to?.place?.city}, {route_info?.move_to?.place?.country}</strong>{route_info?.move_to?.place?.city} </span></li></a>
             <hr className="horiz" />
             <div className="money">
               <p className="tex">Ціна</p>
-              <p className="priceyyy">{route_info?.price}$</p>
+              <p className="priceyyy">{route_info?.price}₴</p>
 
             </div>
             <hr className="horiz" />

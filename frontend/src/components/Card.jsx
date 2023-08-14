@@ -35,7 +35,7 @@ const Card = ({ time_from, city_from, id_from, time_to, city_to, id_to, price, r
                                    <span className="names">{parsed_time_to} {city_to}</span>
                               </div>
                          </div>
-                         <span className="price">{price}$</span>
+                         <span className="price">{price}₴</span>
                          <button 
                               className="but"
                               onClick={() => {

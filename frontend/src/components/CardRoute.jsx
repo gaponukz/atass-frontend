@@ -22,17 +22,17 @@ const CardRoute = ({ route_id, move_from , move_to }) => {
      }, [])
 
      const parsed_time_from_pre = new Date(user_res?.move_from?.date);
-     const parsed_time_from = `${parsed_time_from_pre.getHours().toString().padStart(2, "0")} : ${parsed_time_from_pre.getMinutes().toString().padStart(2, "0")}`;
+     const parsed_time_from = `${parsed_time_from_pre.getHours().toString().padStart(2, "0")}:${parsed_time_from_pre.getMinutes().toString().padStart(2, "0")}`;
      
      const parsed_time_to_pre = new Date(user_res?.move_to?.date);
-     const parsed_time_to = `${parsed_time_to_pre.getHours().toString().padStart(2, "0")} : ${parsed_time_to_pre.getMinutes().toString().padStart(2, "0")}`;
+     const parsed_time_to = `${parsed_time_to_pre.getHours().toString().padStart(2, "0")}:${parsed_time_to_pre.getMinutes().toString().padStart(2, "0")}`;
      // console.log(user_res);
 
      return (
           <div>
                <div class="card new_card" >
                     <div class="card-body new_card_body">
-                         <p class="glav_data">{weeks[parsed_time_from_pre.getDay()]},{parsed_time_from_pre.getDate()} {months[parsed_time_from_pre.getMonth()]?.toLocaleLowerCase()},{parsed_time_from}</p>
+                         <p class="glav_data">{weeks[parsed_time_from_pre.getDay()]}, {parsed_time_from_pre.getDate()} {months[parsed_time_from_pre.getMonth()]?.toLocaleLowerCase()}, {parsed_time_from}</p>
                          <ul class="event">
                               <li>
                                    <time >{parsed_time_from}</time>

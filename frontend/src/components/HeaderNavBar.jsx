@@ -61,7 +61,7 @@ const HeaderNavBar = ({ authorized, setAuthorized }) => {
                         >{(authorized) ? (<p>Особистий кабінет</p>) : (<p>Увійти</p>)}</a></li>
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
-                           <li className="onas"><NavLink to="/about-us" >О нас</NavLink></li>
+                           <li className="onas"><NavLink to="/about-us" >Про нас</NavLink></li>
                            <div className="erty">
                            <img src={icons8_bus_96} className="person" style={{ float: "left" }} />
                            <li className="msssss"

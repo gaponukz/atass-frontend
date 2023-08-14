@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import CardRoute from "./CardRoute";
 import { Circles } from "react-loader-spinner";
 import PageNotFound505 from "./PageNotFound505";
+import { NavLink } from 'react-router-dom'
 
 const UserRoutes = () => {
 
@@ -50,7 +51,7 @@ const UserRoutes = () => {
                     </>) : (
                     <>
                          <div>
-                              {(userCheck) ? (<p className="nema_poiz">У вас ще немає марштрутів</p>) : (<>
+                              {(userCheck) ? (<p className="nema_poiz">У вас ще немає марштрутів, але ви можете <NavLink to="/">придбати їх!</NavLink></p>) : (<>
                                    <div className="container qty">
                                         <h1 className="first_name">Ваші поїздки</h1>
                                         <div className="rov">
