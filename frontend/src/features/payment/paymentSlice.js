@@ -15,7 +15,8 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
               "fullName": fullName,
               "phoneNumber": phoneNumber,
               "movingFromId": movingFromId,
-              "movingTowardsId": movingTowardsId
+              "movingTowardsId": movingTowardsId,
+              "isAnonymous": id === ""
           }
      }
      )
