@@ -1,6 +1,8 @@
 import React from 'react'
 import FooterAboutUs from './FooterAboutUs'
-import icons8_bus_96 from "./static/images/icons8-bus-96.png"
+import test1 from "./static/images/test1.jpg"
+import test2 from "./static/images/test2.jpg"
+import test3 from "./static/images/test3.jpg"
 
 
 
@@ -33,6 +35,27 @@ const AboutUs = () => {
         </div>
         <div className='new_test'>
           <p className='ph'>Фотографії</p>
+          <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src={test1} class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src={test2} class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src={test3} class="d-block w-100" alt="..." />
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
         </div>
         <div className='new_test'>
         <div class="info-block idea">
