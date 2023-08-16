@@ -6,7 +6,7 @@ const FooterAboutUs = ({ check }) => {
      <div className="container-1 ersttts" >
 
      <div className="cloud-box">
-               <h2 className="mb-4">Куди ви хочете їхати?</h2>
+               <h2 className="mb-4  new_text">Куди ви хочете їхати?</h2>
             </div>
             
             <div className="row" style={{ paddingBottom: " 50px",}} id="card">

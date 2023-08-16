@@ -2,9 +2,16 @@ import React from 'react'
 import FooterAboutUs from './FooterAboutUs'
 import icons8_bus_96 from "./static/images/icons8-bus-96.png"
 
+
+
+
+
 const AboutUs = () => {
   return (
+
+
     <div>
+      
         <div class="about-us-container">
     <div class="about-us-content">
 
@@ -42,7 +49,7 @@ const AboutUs = () => {
           <button
                     type="submit"
                     className="btn ss"
-                    style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold", width:'40%',marginTop:"5%" }}
+                    style={{ backgroundColor: "#40ABCF", color: "white", fontWeight: "bold", width:'50%',marginTop:"5%" }}
                 >
                         <span
 

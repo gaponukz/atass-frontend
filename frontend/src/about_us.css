@@ -1,11 +1,16 @@
+
+
+
+
 .about-us-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    
     background-color: #40ABCF;
   }
   .ph{
+    font-family: sans-serif;
     float: left;
     color: #40ABCF;
     font-size: 24px;
@@ -52,12 +57,14 @@
     padding-top: 3%;
   }
   .info-block h2 {
+    
     font-size: 28px;
     margin-bottom: 5px;
     font-weight: 900;
     color: rgb(234, 234, 234);
   }
   .info-block h3 {
+    font-family: sans-serif;
     font-weight: 900;
     color: rgb(255, 255, 255);
     font-size: 35px;
@@ -84,15 +91,48 @@
     color: black;
   }
   .idea h2{
+    font-family: sans-serif;
+    
     font-weight: 900;
     color: #157FA2;
   }
  .idea h1{
   margin-top: 5%;
-  font-weight: 600;
+  font-weight: 300;
  }
  .idea h4,h5{
+  font-family: sans-serif;
   margin-top: 2%;
-  font-weight: 800;
+  font-weight: 300;
   color: #40ABCF;
+ }
+ .new_text{
+  color: #157FA2;
+  font-weight: 900;
+ }
+
+ @media (max-width: 800px){
+  .about-us-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-row{
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+  }
+  .first_text{
+    width: 80%;
+    text-align: center;
+    margin-left: 9%;
+  }
+  .new_test{
+    width: 80%;
+    margin-left: 10%;
+    
+  }
+  .ersttts{
+    background: linear-gradient(to top, #1B5D77 86%, #40ABCF 14%);
+    
+  }
  }
