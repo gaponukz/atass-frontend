@@ -59,15 +59,15 @@ const AboutUs = () => {
         </div>
         <div className='new_test'>
         <div class="info-block idea">
-          <h1>Контакти</h1>
-          <h2>ЧЕКАЄМО НА ВАС</h2>
-          <p>Володимира Момота 42</p>
-          <p>Бориспіль,Київська,0830</p>
-          <h4>прийомна:</h4>
-          <p>04595 6 47 82</p>
-          <h5>відділ перевезень:</h5>
-          <p>04595 6 14 86</p>
-          <p>atass@atass.com.ua</p>
+          <h1 className='new_h1' style={{fontWeight:'300', marginTop:"5%"}} >Контакти</h1>
+          <h2 className='new_h2'>ЧЕКАЄМО НА ВАС</h2>
+          <p  style={{color: 'black'}} >Володимира Момота 42</p>
+          <p  style={{color: 'black'}}>Бориспіль,Київська,0830</p>
+          <h4 style={{color:'#157FA2', fontWeight:'300'}}>прийомна:</h4>
+          <p  style={{color: 'black'}}>04595 6 47 82</p>
+          <h5 style={{color:'#157FA2', fontWeight:'300'}}>відділ перевезень:</h5>
+          <p  style={{color: 'black'}}>04595 6 14 86</p>
+          <p style={{color: 'black'}}>atass@atass.com.ua</p>
           <div className='button_con'>
           <button
                     type="submit"
