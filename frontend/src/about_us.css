@@ -1,0 +1,131 @@
+
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #40ABCF;
+  }
+.ph{
+    font-family: sans-serif;
+    float: left;
+    color: #40ABCF;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5%;
+  }
+.about-us-content {
+    width: 100%;
+    text-align: center;
+    
+  }
+  
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+.first_text{
+
+    margin-top: 7%;
+    margin-left: 5%;
+    margin-bottom: 15%;
+  }
+.info-block {
+    width: 40%;
+    
+    text-align: left;
+    overflow: hidden; /* Обрезка текста */
+  }
+.idea{
+    text-align: center;
+    width: 100%;
+  }
+.new_test{
+    border-radius: 15px;
+    margin-top: 9%;
+    background-color: white;
+    margin-right: 4%;
+    margin-left: 2%;
+    width: 400px;
+    height: 400px;
+  }
+  #new_line{
+    padding-top: 3%;
+  }
+.info-block h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    
+  }
+.info-block h3 {
+    font-family: sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 35px;
+  }
+  
+  
+.info-block  p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+    overflow: hidden; /* Обрезка текста */
+ 
+  }
+  .ersttts{
+    background: linear-gradient(to top, #1B5D77 77%, #40ABCF 23%);
+    
+  }
+  
+  .idea h2{
+    font-family: sans-serif;
+    font-weight: 900;
+    color: #157FA2;
+  }
+
+  .idea h4,h5{
+    font-family: sans-serif;
+
+    
+   }
+ .new_text{
+  color: #157FA2;
+  font-weight: 900;
+ }
+
+
+ @media (max-width: 800px){
+  .about-us-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-row{
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+  }
+  .first_text{
+    width: 80%;
+    text-align: center;
+    margin-left: 9%;
+  }
+  .new_test{
+    width: 80%;
+    margin-left: 10%;
+    
+  }
+  .ersttts{
+    background: linear-gradient(to top, #1B5D77 86%, #40ABCF 14%);
+    
+  }
+ }
+ @media only screen and (min-width: 850px) and (max-width: 1100px){
+  .new_test{
+    height: 450px;
+  }
+ }
