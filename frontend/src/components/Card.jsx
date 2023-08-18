@@ -44,7 +44,7 @@ const Card = ({ time_from, city_from, id_from, time_to, city_to, id_to, price, r
                               }}
                          >Вибрати</button>
                          <img src={clock} className="time" />
-                         <span className="t">{`${test.getUTCHours()}.${test.getUTCMinutes()}`} ч</span>
+                         <span className="t">{`${test.getUTCHours()}.${test.getUTCMinutes()}`} г</span>
                     </div>
                </div>
           </>
