@@ -140,7 +140,7 @@ const dataSlice = createSlice({
             })
             .addCase(getUserRoutes.fulfilled, (state, action) => {
                 //console.log("g+", action.payload);
-                if (action.payload === null) {
+                if (action.payload === null || (Array.isArray(action.payload) && action.payload.length === 0)) {
                     state.userNotHaveRoutes = true;
                 }
                 else {

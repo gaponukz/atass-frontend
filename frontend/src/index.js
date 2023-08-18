@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './style.css';
- import "./reg_osn.css"
- import "./reg_osn.css"
 import { BrowserRouter } from "react-router-dom";
 import './reg.css'
 import './new_pasword.css'
