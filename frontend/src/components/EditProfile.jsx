@@ -35,7 +35,7 @@ const EditProfile = () => {
 
   const resetAsyncForm = useCallback(async () => {
     try {
-      const result = await axios.get('http://localhost:8080/getUserInfo');
+      const result = await axios.get('http://139.28.37.204/api/auth/getUserInfo');
       console.log(result.data);
       reset({
         name: result.data.fullName,
