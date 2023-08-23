@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 
 
-const POSTS_URL = "http://localhost:8080";
+const POSTS_URL = "http://139.28.37.204/api/auth";
 axios.defaults.withCredentials = true;
 
 const initialState = {

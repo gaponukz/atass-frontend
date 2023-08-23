@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000";
-const BASE_URL_USER = "http://localhost:8080";
+const BASE_URL = "http://139.28.37.204/api/routes";
+const BASE_URL_USER = "http://139.28.37.204/api/auth";
 
 
 export const getUserIdRoute = createAsyncThunk("data/getUserIdRoute", async () => {

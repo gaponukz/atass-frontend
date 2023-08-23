@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000";
-const BASE_URL_USER = "http://localhost:8080";
-const BASE_URL_PAY = "http://localhost:9090";
+const BASE_URL = "http://139.28.37.204/api/routes";
+const BASE_URL_USER = "http://139.28.37.204/api/auth";
+const BASE_URL_PAY = "http://139.28.37.204/api/payments";
 
 export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, routeId, passenger, id, gmail, fullName, phoneNumber, movingFromId, movingTowardsId }) => {
      const response = await axios.post(`${BASE_URL_PAY}/processPayment`, {
@@ -18,8 +18,7 @@ export const postPaymnet = createAsyncThunk("pay/postPaymnet", async ({ amount, 
               "movingTowardsId": movingTowardsId,
               "isAnonymous": id === ""
           }
-     }
-     )
+     })
      // console.log(response.data);
  
      return response.data

@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 
 
-const BASE_URL = "http://localhost:8080";
+const BASE_URL = "http://139.28.37.204/api/auth";
 axios.defaults.withCredentials = true
 
 export const getUserId = createAsyncThunk("data/getUserId", async () => {
