@@ -16,6 +16,8 @@ export const getUserIdRoute = createAsyncThunk("data/getUserIdRoute", async () =
 
 export const getRouteInfo = createAsyncThunk("route/getRouteInfo", async ({ fromCity, toCity, date }) => {
      // console.log(fromCity, toCity, date);
+     fromCity = encodeURIComponent(fromCity)
+     toCity = encodeURIComponent(toCity)
      console.log(`${BASE_URL}/available?move_from_city=${fromCity}&move_to_city=${toCity}&date=${date}`);
 
      const response = await axios.get(`${BASE_URL}/available?move_from_city=${fromCity}&move_to_city=${toCity}&date=${date}`,
