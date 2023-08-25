@@ -306,6 +306,7 @@ nav span{
    #myCheckbox{
        width: 17px;
        height: 17px;
+       right: 16%;
    }
    .sil{
        padding-top: 23%;

@@ -14,10 +14,13 @@ nav{
     background-color: white;
     height: 70px;
 }
+
 .msssss{
     padding-top: 5%;
     width: 150%;
     color: black;
+    font-weight: bold;
+    margin-top: 15%;
 }
 .mts{
     color: #0487B3;
@@ -290,9 +293,11 @@ nav span{
     }
 
     #top .onas{
+        width: 130%;
         margin: 0;
-      padding:0;
+        padding:0;
         margin-right: 15px;
+        padding-top: 10%;
     }
     .pic{
         width: 60%;
@@ -307,6 +312,10 @@ nav span{
         margin:0;
         width: 30px;
         height: 30px;
+        margin-top: 10%;
+    }
+    #top .xczxcv{
+        margin-top: 15%;
     }
     #top .world{
         margin: 0;

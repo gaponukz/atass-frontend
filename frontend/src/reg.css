@@ -145,7 +145,7 @@ nav span{
     font-size: 20px;
     padding-left: 1px;
 }
-#myCheckbox{
+#myCheckbox1{
     height: 23px;
     width: 23px;
     position: absolute;
@@ -309,9 +309,10 @@ nav span{
        font-size: 14px;
        margin-left: 1%;
    }
-   #myCheckbox{
+   #myCheckbox1{
        width: 17px;
        height: 17px;
+       right: 16%;
    }
    .silll{
        padding-top: 13%;

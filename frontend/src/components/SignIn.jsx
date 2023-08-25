@@ -125,7 +125,7 @@ const SignIn = ({ authorized, setAuthorized }) => {
                 <p className="objectt">Запам'ятати мене</p>
                 <input
                     type="checkbox"
-                    id="myCheckbox"
+                    id="myCheckbox1"
                     className="objectt"
                     checked={rememberHim}
                     onChange={() => {
