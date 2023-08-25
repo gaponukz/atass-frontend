@@ -127,6 +127,7 @@ nav span{
     height: 60px;
     background-color:#E8F0FE;
     border-radius: 15px;
+    font-size: 14px;
 }
 
 .ss{
@@ -324,7 +325,7 @@ nav span{
    }
    .ert{
        height: 40px;
-       font-size: 13px;
+       font-size: 11px;
    }
    .kn button{
     width: 40%;
