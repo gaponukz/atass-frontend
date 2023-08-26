@@ -141,7 +141,7 @@ nav span{
     margin:15px;
     border-radius: 10px;
     box-shadow:
-            0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+            0px 0px 10px 5px rgba(0, 0, 0, 0.1);    
 }
 
 .container1{
@@ -445,13 +445,13 @@ nav span{
      bottom: 8%;
  }
  .mn{
-     width: 145%;
+     width: 136%;
      
      
 
  }
  .bef{
-    padding-right:37%;
+    padding-right:35%;
  }
  .container1{
      width: 100%;
