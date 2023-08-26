@@ -215,10 +215,13 @@
        width: 100%;
        margin-left: 20%;
      }
+     .events time {
+      margin-left: 25%;
+    }
    }
    @media (min-width: 400px) and (max-width: 600px){
      .events time{
-       margin-left: 10%;
+       margin-left: 25%;
     }
    
      .test_s{
