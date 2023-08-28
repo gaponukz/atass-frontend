@@ -61,7 +61,10 @@ const HeaderNavBar = ({ authorized, setAuthorized }) => {
                         >{(authorized) ? (<p>Особистий кабінет</p>) : (<p>Увійти</p>)}</a></li>
                         <div style={{ marginRight: "100px", marginTop: "25px" }}>
                            <img src={icons8_contact_us_96} className="us" style={{ float: "left" }} />
-                           <li className="onas"><NavLink to="/about-us" >Про нас</NavLink></li>
+                           <li className="onas"><NavLink to="/about-us" onClick={() => {
+                                 navigate("/about-us")
+                                 navigate(0)
+                              }} >Про нас</NavLink></li>
                            <div className="erty">
                            <img src={icons8_bus_96} className="us xczxcv" style={{ float: "left" }} />
                            <li className="msssss"
@@ -97,7 +100,10 @@ const HeaderNavBar = ({ authorized, setAuthorized }) => {
                   <option value="en">English</option>
                   <option value="pl">Polski</option>
                </select>
-               <li><NavLink to="/about-us">Про нас</NavLink></li>
+               <li><NavLink to="/about-us" onClick={() => {
+                     navigate("/about-us")
+                     navigate(0)
+                  }}>Про нас</NavLink></li>
                <li className="mts"
             
                
