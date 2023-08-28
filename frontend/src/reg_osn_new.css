@@ -174,7 +174,7 @@ nav span{
     padding-top: 2%;
     padding-bottom: 2%;
     font-weight: bold;
-    margin-right: 80%;
+    
     font-size: 20px;
     text-decoration: none;
 }
@@ -353,7 +353,7 @@ nav span{
    .silka{
     font-size: 10px;
     width: 80%;
-    margin-right: 75%;
+    margin-left: 3%;
    }
 }
 
